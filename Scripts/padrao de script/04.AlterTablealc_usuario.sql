@@ -1,0 +1,48 @@
+USE [tkgs_cap]
+GO
+
+IF NOT EXISTS
+(
+	SELECT
+		1
+	FROM
+		INFORMATION_SCHEMA.COLUMNS
+	WHERE
+		UPPER(TABLE_NAME) = UPPER('alc_usuario')
+		AND UPPER(COLUMN_NAME) = UPPER('sts_login')
+)
+BEGIN
+	ALTER TABLE DBO.alc_usuario
+	ADD [sts_login] BIT  DEFAULT 0 
+END
+
+IF NOT EXISTS
+(
+    SELECT
+		1
+    FROM
+		INFORMATION_SCHEMA.COLUMNS
+    WHERE
+		UPPER(TABLE_NAME) = UPPER('alc_usuario')
+		AND UPPER(COLUMN_NAME) = UPPER('qtd_acesso_invalido')
+)
+BEGIN
+	ALTER TABLE DBO.alc_usuario
+	ADD [qtd_acesso_invalido] INT NULL
+END
+
+IF NOT EXISTS
+(
+    SELECT
+		1
+    FROM
+		INFORMATION_SCHEMA.COLUMNS
+    WHERE
+		UPPER(TABLE_NAME) = UPPER('alc_usuario')
+		AND UPPER(COLUMN_NAME) = UPPER('dta_acesso_invalido')
+)
+BEGIN
+	ALTER TABLE DBO.alc_usuario
+	ADD [dta_acesso_invalido] DATETIME NULL
+END
+GO
