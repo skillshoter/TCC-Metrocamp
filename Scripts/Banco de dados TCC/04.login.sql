@@ -1,11 +1,7 @@
-USE [tkgs_cap]
-GO
 
-IF OBJECT_ID('[DBO].[login_acesso]') IS NULL
-BEGIN
-	CREATE TABLE DBO.login_acesso
+CREATE TABLE login_acesso
 	(
-		id_login int identity(1,1) NOT NULL,
+		id_login int auto_increment NOT NULL,
 		ult_acesso  datetime,
 		dat_criacao  datetime,
 		id_pessoa    int,
@@ -13,5 +9,3 @@ BEGIN
 		senha varchar(15),
 	    PRIMARY KEY(id_login)
 	)
-END
-GO
