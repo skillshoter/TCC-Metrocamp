@@ -1,0 +1,42 @@
+Pessoar segue o passo a passo para configurar:
+primeiro baixe o node.js versão 10.24.0   aqui -> https://nodejs.org/dist/latest-v10.x/ -> node-v10.24.0-x64.msi     
+Depois de instalado de esses comandos no cmd:
+	node -v
+	npm -v
+	cordova -v
+	ionic -v
+seu node -v tem que estar na versao: v10.24.0
+seu npm -v tem que estar na versao: 6.14.11  
+	se caso seu npm não estiver nessa versão utilize o codigo abaixo:
+	npm install -g npm@6.14.11
+seu cordova -v tem que estar na versao: v10.0
+e seu ionic -v tem que estar na versão:5.4.16
+
+assim que voce instalar o ionic não ir vir, então use esse comando antes de usar ionic -v:(no cmd)
+	npm install ionic -g
+	ou
+	npm install -g @ionic/cli
+
+e agora sim faça o: ionic -v
+
+agora faça o cordova -v tambem, se caso não estiver instalado ainda:
+	npm install cordova -g
+
+verifique a versão dele tbm.
+---------------------------------------------------------------
+Após tudo isso feito, baixe o visual code.
+--------------------------------------------------------------
+Vá no git e de um pull do repositorio.
+---------------------------------------------------
+abra o visual code, e selecione para abrir o arquivo TCC(é meio estranho nessa parte)
+------------------------------------------------
+dentro do visual code abra o terminal
+--------------------------------------
+digite ionic serve
+------------------------------
+seja feliz
+
+
+ps:qualquer tipo de erro no processo deve ser procurado a parte, tive problemas com portas e permissoes  
+
+
