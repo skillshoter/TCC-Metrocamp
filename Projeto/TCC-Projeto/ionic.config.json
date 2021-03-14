@@ -1,5 +1,7 @@
 {
   "name": "TCC-Projeto",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
