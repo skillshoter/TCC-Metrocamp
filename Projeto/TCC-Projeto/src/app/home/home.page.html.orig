@@ -1,7 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
+<<<<<<< HEAD
+      brunao Covaarde
+=======
 BRUNÃO BROSHAICARECA
+>>>>>>> ff8c6aa268be31963b9ef5a93e4e602363425fcc
     </ion-title>
   </ion-toolbar>
 </ion-header>
