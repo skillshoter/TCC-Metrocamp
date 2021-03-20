@@ -26,9 +26,11 @@ export class HomePage {
         if(Object.keys(data).length === 0)
         {
           console.log("não existe user");
+          alert("Não existe usuario cadastrado");
         }else
         {
           console.log("redireciona tela Home");
+          alert("Redirecionar nova tela");
         }
       },(error)=> {
         console.log(error);
