@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  users: any;
 
+  constructor(public http: HttpClient) {
+
+  }
+
+    getData(event:any)
+    {
+      this.http.get('http://localhost:3000/cars').subscribe((data)=> {
+        console.log(data);
+        this.users = data;
+      },(error)=> {
+        console.log(error);
+      });
+    }
 }
