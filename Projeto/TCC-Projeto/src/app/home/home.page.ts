@@ -23,6 +23,13 @@ export class HomePage {
       this.http.get('http://localhost:3000/user?name='+this.login+'&senha='+this.senha).subscribe((data)=> {
         console.log(data);
         this.users = data;
+        if(Object.keys(data).length === 0)
+        {
+          console.log("não existe user");
+        }else
+        {
+          console.log("redireciona tela Home");
+        }
       },(error)=> {
         console.log(error);
       });

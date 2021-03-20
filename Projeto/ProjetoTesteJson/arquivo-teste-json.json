@@ -16,11 +16,6 @@
       "id": 1,
       "body": "some comment",
       "postId": 1
-    },
-    {
-      "id": 2,
-      "body": "paçoca",
-      "postId": 2
     }
   ],
   "cars": [
@@ -48,16 +43,11 @@
       ]
     }
   ],
-  "user":[
+  "user": [
     {
-      "id":1,
-      "name":"lucas",
-      "senha":12345
-    },
-    {
-      "id":2,
-      "name":"pedro",
-      "senha":12345
+      "id": 1,
+      "name": "lucas",
+      "senha": 12345
     }
   ]
 }
