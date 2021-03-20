@@ -4,21 +4,6 @@
       "id": 1,
       "name": "json-server",
       "author": "typicode"
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
     }
   ],
   "profile": [
@@ -31,6 +16,11 @@
       "id": 1,
       "body": "some comment",
       "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "paçoca",
+      "postId": 2
     }
   ],
   "cars": [
@@ -56,6 +46,18 @@
         "500",
         "Panda"
       ]
+    }
+  ],
+  "user":[
+    {
+      "id":1,
+      "name":"lucas",
+      "senha":12345
+    },
+    {
+      "id":2,
+      "name":"pedro",
+      "senha":12345
     }
   ]
 }

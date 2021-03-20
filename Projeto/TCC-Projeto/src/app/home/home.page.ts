@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { analyzeAndValidateNgModules, identifierModuleUrl } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -13,10 +14,13 @@ export class HomePage {
   constructor(public http: HttpClient) {
 
   }
-
+    login:any;
+    senha:any;
     getData(event:any)
-    {
-      this.http.get('http://localhost:3000/cars').subscribe((data)=> {
+    { 
+      console.log("valor do login:"+this.login);  
+      console.log("valor do login:"+this.senha);
+      this.http.get('http://localhost:3000/user?name='+this.login+'&senha='+this.senha).subscribe((data)=> {
         console.log(data);
         this.users = data;
       },(error)=> {

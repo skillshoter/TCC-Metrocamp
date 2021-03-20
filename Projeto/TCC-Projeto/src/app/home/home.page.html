@@ -16,9 +16,9 @@ BRUNÃO BROSHAICARECADSDSD
   <div id="container">
     <ion-item>
       <ion-label>Login</ion-label>
-      <ion-input></ion-input>
+      <ion-input id="login" [(ngModel)]="login"></ion-input>
     </ion-item>
-    <ion-input type="password" value="333"></ion-input>
+    <ion-input type="password" [(ngModel)]="senha"></ion-input>
     <ion-item>
       <ion-button (click)="getData()">Enter</ion-button>
     </ion-item>
