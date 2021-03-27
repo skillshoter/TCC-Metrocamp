@@ -45,9 +45,11 @@
   ],
   "user": [
     {
-      "id": 1,
-      "name": "lucas",
-      "senha": 12345
+      "Login":"tete",
+      "Nome":"brunim",
+      "Telefone":"1241",
+      "Email":"ed",
+      "Senha":213
     }
   ]
 }
