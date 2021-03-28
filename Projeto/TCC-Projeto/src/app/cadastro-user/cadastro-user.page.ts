@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HtmlParser } from '@angular/compiler';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-cadastro-user',
@@ -9,7 +9,7 @@ import { HtmlParser } from '@angular/compiler';
 })
 export class CadastroUserPage implements OnInit {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, private route: Router) { }
 
   ngOnInit() {
 
@@ -35,8 +35,6 @@ export class CadastroUserPage implements OnInit {
         senha:this.senhaUser
        };
        
-     //  headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
-       
       const  requestUrl = 'http://25.3.255.44:8080/users/criaUsuario';//ver com nathan 
       this.http.post(requestUrl, obj, { headers: { 'Content-Type': 'application/json' } }).subscribe(
         (val) => {
@@ -59,6 +57,6 @@ export class CadastroUserPage implements OnInit {
   voltar(event:any)
   {
     console.log("voltar tela");
-    
+    this.route.navigate(['/home']);
   }
 }

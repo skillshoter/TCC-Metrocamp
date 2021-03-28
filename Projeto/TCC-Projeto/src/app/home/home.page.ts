@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { analyzeAndValidateNgModules, identifierModuleUrl } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomePage {
 
   users: any;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private route: Router) {
 
   }
     login:any;
@@ -35,5 +36,10 @@ export class HomePage {
       },(error)=> {
         console.log(error);
       });
+    }
+
+    goCad(event:any)
+    {
+      this.route.navigate(['/cadastro-user']);
     }
 }
