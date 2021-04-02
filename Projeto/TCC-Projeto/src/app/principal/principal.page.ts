@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-principal',
@@ -12,12 +13,14 @@ export class PrincipalPage implements OnInit {
   constructor(public http: HttpClient, private route: Router) { }
 
   ngOnInit() {
+    //this.setDimension();//remover apenas para teste
   }
   
-  NameEmpresa:any;
+   NameEmpresa:any;
   CnpjEmpresa:any;
   Endereco:any;
   EmpresasList:any;
+
 
   pesquisar(event:any)
   {
@@ -34,13 +37,31 @@ export class PrincipalPage implements OnInit {
         }else
         {
           console.log("Mostra Grid");
-          //criar a grid com os parametros do this.EmpresasList
           alert("Grid montada");//remover depois
+          this.ionViewDidLoad();//passar o DATA como parametro
         }
       },(error)=> {
         console.log(error);
         alert("Consulta a API não encontrou o endereço.");
+        this.ionViewDidLoad();//colocar no alert alert("Grid montada");
       });
   }
 
+  public items: Array<any>;
+
+  ionViewDidLoad() {
+    //alterar o objeto para receber os valores do DATA
+       this.items = [
+           {  id:'1',title: 'Notatka 1', description: 'Opis notatki 1' },
+           {  id:'2',title: 'Notatka 2', description: 'Opis notatki 2' },
+           {  id:'3',title: 'Notatka 3', description: 'Opis notatki 3' }
+       ];
+   }
+
+   detalhesRowGrid(item)
+   {
+     console.log(item);//valor da linha selecionada na grid
+     console.log('pega os detalhes das empresas');
+     alert('API trazendo detalhes da empresa + redirect tela nova');
+   }
 }
