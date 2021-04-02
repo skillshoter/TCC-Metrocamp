@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>principal</ion-title>
+    <ion-title class="ion-text-center">Principal-Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+ 
+    <div class="row">
+      <ion-item>
+        <ion-label>Nome da Empresa:</ion-label>
+        <ion-input id="NameEmpresa" [(ngModel)]="NameEmpresa"></ion-input>
+      </ion-item>
+    </div> 
+    <div class="row"> 
+      <ion-item>
+         <ion-label>Cnpj da Empresa:</ion-label>
+         <ion-input id="CnpjEmpresa" [(ngModel)]="CnpjEmpresa"></ion-input>
+      </ion-item>
+    </div>
+    <div class="row">
+      <ion-item>
+         <ion-label>Endereço:</ion-label>
+         <ion-input id="Endereco" [(ngModel)]="Endereco"></ion-input>
+      </ion-item>
+    </div>  
+    <div class="column3">
+      <button class="buttonPesq" (click)="pesquisar()">Pesquisar</button>
+    </div>
+    <div class="grid">
+      <label>Grid</label>
+      
+    </div>
 </ion-content>
