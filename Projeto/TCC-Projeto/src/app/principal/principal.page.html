@@ -28,11 +28,21 @@
       <button class="buttonPesq" (click)="pesquisar()">Pesquisar</button>
     </div>
     <div class="grid">
+      <div class="descricao">
+      <tr id="trGrid"  style="display: none; width: 100%;">
+        <th style="margin-left: 2%; width: 20%;" colspan="3" >ID</th>
+        <th style="margin-left: 2%; width: 20%;" colspan="3" >Nome Empresa</th>
+        <th style="margin-left: 2%; width: 20%;" colspan="2" >Endereço</th>
+        <th style="margin-left: 2%; width: 20%;" colspan="2" >Avaliação Geral</th>
+        <th  style="margin-left: 2%; width: 20%;" colspan="2">Detalhes</th>
+      </tr> 
+    </div>
       <ion-list padding *ngFor="let item of items">
         <ion-item (click)="viewItem(item)">
-          <p style="margin-left: 1%;">{{item.id}}</p>
-          <p style="margin-left: 1%;">{{item.title}}</p>
-          <p style="margin-left: 1%;">{{item.description}}</p>
+          <p style="margin-left: 5.5%; width: 20%;">{{item.id}}</p>
+          <p style="margin-left: 2.5%; width: 20%;">{{item.title}}</p>
+          <p style="margin-left: 2.5%; width: 20%;">{{item.description}}</p>
+          <p style="margin-left: 2.5%; width: 20%;">{{item.nota}}</p>
             <ion-button class="buttonGrid" (click)="detalhesRowGrid(item)" >Teste</ion-button>
         </ion-item>
     </ion-list>

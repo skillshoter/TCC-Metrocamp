@@ -40,6 +40,6 @@ export class HomePage {
 
     goCad(event:any)
     {
-      this.route.navigate(['/cadastro-user']);
+      this.route.navigate(['/principal']);
     }
 }

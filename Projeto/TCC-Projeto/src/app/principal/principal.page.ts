@@ -44,6 +44,8 @@ export class PrincipalPage implements OnInit {
         console.log(error);
         alert("Consulta a API não encontrou o endereço.");
         this.ionViewDidLoad();//colocar no alert alert("Grid montada");
+        var result_style = document.getElementById('trGrid').style;
+        result_style.display = 'flex'; 
       });
   }
 
@@ -52,9 +54,9 @@ export class PrincipalPage implements OnInit {
   ionViewDidLoad() {
     //alterar o objeto para receber os valores do DATA
        this.items = [
-           {  id:'1',title: 'Notatka 1', description: 'Opis notatki 1' },
-           {  id:'2',title: 'Notatka 2', description: 'Opis notatki 2' },
-           {  id:'3',title: 'Notatka 3', description: 'Opis notatki 3' }
+           {  id:'1',title: 'Notatka 1', description: 'Opis notatki 1', nota:'3' },
+           {  id:'2',title: 'Notatka 2', description: 'Opis notatki 2', nota:'3' },
+           {  id:'3',title: 'Notatka 3', description: 'Opis notatki 3', nota:'3' }
        ];
    }
 
