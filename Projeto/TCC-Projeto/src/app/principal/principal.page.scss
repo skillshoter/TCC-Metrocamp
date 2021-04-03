@@ -4,13 +4,28 @@ ion-toolbar {
 
 .column3 {
  float: right;
+ position: relative;
+ left: -40%;
  width: 25.0%;
  }
 
  .buttonGrid
  {
     margin-left: 1%;
+    background: darkgreen;
+    transition-duration: 0.2s;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    padding: 5px 3%;
+    border-radius: 2px;
  }
+
+ .buttonGrid:hover {
+    background-color: #4CAF50; /* Green */
+    color: rgb(219, 212, 212);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
 
  .descricao
  {
@@ -19,7 +34,7 @@ ion-toolbar {
 
  .grid
  {
-     margin-top: 5.1%;
+     margin-top: 10.1%;
  }
 
 .buttonPesq{
@@ -28,7 +43,7 @@ ion-toolbar {
     padding: 15px 41%;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
     font-size: 16px;
     background: darkgreen;
     border-radius: 2px;
