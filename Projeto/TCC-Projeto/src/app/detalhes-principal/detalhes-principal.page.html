@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Detalhes Empresa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div id="divDetalhes">
+  <div class="row" >
+    <ion-span class="col" id="teste1" >Nome da Empresa:</ion-span>
+    <ion-input [(ngModel)]="teste1" id="inputTeste1" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste2">Descrição:</ion-span>
+    <ion-input [(ngModel)]="teste2" id="inputTeste2" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste3">Nota Geral:</ion-span>
+    <ion-input [(ngModel)]="teste3" id="inputTeste3" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste4">Alcool em Gel no ambiente:</ion-span>
+    <ion-input [(ngModel)]="teste4" id="inputTeste4" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste5">Funcionarios utilizam mascaras:</ion-span>
+    <ion-input [(ngModel)]="teste5" id="inputTeste5" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste6">Clientes utilizam mascaras:</ion-span>
+    <ion-input [(ngModel)]="teste6" id="inputTeste6" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste7">Aglomeração no Recinto:</ion-span>
+    <ion-input [(ngModel)]="teste7" id="inputTeste7" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste8">Controle de Entrada:</ion-span>
+    <ion-input [(ngModel)]="teste8" id="inputTeste8" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste9">Limite de Cliente:</ion-span>
+    <ion-input [(ngModel)]="teste9" id="inputTeste9" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste10">Ambiente com Circulação de Ar:</ion-span>
+    <ion-input [(ngModel)]="teste10" id="inputTeste10" style="width: 5%;"></ion-input>
+  </div>
+  <div class="row">
+    <ion-span class="col" id="teste11">Higienização do Ambiente:</ion-span>
+    <ion-input [(ngModel)]="teste11" id="inputTeste11" style="width: 5%;"></ion-input>
+  </div>
+</div>
+  <button class="buttonGrid" (click)="habilitaPizza()" id="habPizza" >Avalie</button>
+  <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
+    <ion-radio-group allow-empty-selection  value="anchovies">
+      <ion-list-header>
+        <ion-label>Pizza Topping</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Beef</ion-label>
+        <ion-radio slot="end" color="primary" value="beef"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Anchovies</ion-label>
+        <ion-radio slot="end" color="secondary" value="anchovies"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sausage</ion-label>
+        <ion-radio slot="end" color="tertiary" value="sausage"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Bellpepper</ion-label>
+        <ion-radio slot="end" color="success" value="tomato"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Tomato</ion-label>
+        <ion-radio slot="end" color="warning" value="carrot"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Pepperoni</ion-label>
+        <ion-radio slot="end" color="danger" value="pepperoni"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </div>
+</ion-content>
