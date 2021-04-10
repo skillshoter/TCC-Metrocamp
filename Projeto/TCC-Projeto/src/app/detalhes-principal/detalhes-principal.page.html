@@ -53,39 +53,78 @@
 </div>
   <button class="buttonGrid" (click)="habilitaPizza()" id="habPizza" >Avalie</button>
   <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
-    <ion-radio-group allow-empty-selection  value="anchovies">
-      <ion-list-header>
-        <ion-label>Pizza Topping</ion-label>
-      </ion-list-header>
-      <ion-item>
-        <ion-label>Beef</ion-label>
-        <ion-radio slot="end" color="primary" value="beef"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Anchovies</ion-label>
-        <ion-radio slot="end" color="secondary" value="anchovies"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Sausage</ion-label>
-        <ion-radio slot="end" color="tertiary" value="sausage"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Bellpepper</ion-label>
-        <ion-radio slot="end" color="success" value="tomato"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Tomato</ion-label>
-        <ion-radio slot="end" color="warning" value="carrot"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Pepperoni</ion-label>
-        <ion-radio slot="end" color="danger" value="pepperoni"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
+    <span style="margin-left: 1%;">Alcool em gel no ambiente:</span>
+    <div style="margin-left: 1%;" class="row">
+     <input  type="radio" value="1" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Pessimo
+     <input  type="radio" value="2" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Ruim
+     <input  type="radio" value="3" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Regular
+     <input  type="radio" value="4" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Bom
+     <input  type="radio" value="5" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Excelente
+    </div>
   </div>
+  <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
+    <span style="margin-left: 1%;">Funcionarios Mascaras:</span>
+    <div style="margin-left: 1%;" class="row">
+     <input  type="radio" value="1" name="funcMask" ngModel> Pessimo
+     <input  type="radio" value="2" name="funcMask" ngModel> Ruim
+     <input  type="radio" value="3" name="funcMask" ngModel> Regular
+     <input  type="radio" value="4" name="funcMask" ngModel> Bom
+     <input  type="radio" value="5" name="funcMask" ngModel> Excelente
+    </div>
+  </div>  <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
+    <span style="margin-left: 1%;">Clientes Mascaras:</span>
+    <div style="margin-left: 1%;" class="row">
+     <input  type="radio" value="1" name="cliMask" ngModel> Pessimo
+     <input  type="radio" value="2" name="cliMask" ngModel> Ruim
+     <input  type="radio" value="3" name="cliMask" ngModel> Regular
+     <input  type="radio" value="4" name="cliMask" ngModel> Bom
+     <input  type="radio" value="5" name="cliMask" ngModel> Excelente
+    </div>
+  </div>  <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
+    <span style="margin-left: 1%;">Aglomeração no Recinto:</span>
+    <div style="margin-left: 1%;" class="row">
+     <input  type="radio" value="1" name="agloRec" ngModel> Pessimo
+     <input  type="radio" value="2" name="agloRec" ngModel> Ruim
+     <input  type="radio" value="3" name="agloRec" ngModel> Regular
+     <input  type="radio" value="4" name="agloRec" ngModel> Bom
+     <input  type="radio" value="5" name="agloRec" ngModel> Excelente
+    </div>
+  </div>  <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
+    <span style="margin-left: 1%;">Controle Entrada:</span>
+    <div style="margin-left: 1%;" class="row">
+     <input  type="radio" value="1" name="contrEntrada" ngModel> Pessimo
+     <input  type="radio" value="2" name="contrEntrada" ngModel> Ruim
+     <input  type="radio" value="3" name="contrEntrada" ngModel> Regular
+     <input  type="radio" value="4" name="contrEntrada" ngModel> Bom
+     <input  type="radio" value="5" name="contrEntrada" ngModel> Excelente
+    </div>
+  </div>  <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
+    <span style="margin-left: 1%;">Limite Cliente:</span>
+    <div style="margin-left: 1%;" class="row">
+     <input  type="radio" value="1" name="limClient" ngModel> Pessimo
+     <input  type="radio" value="2" name="limClient" ngModel> Ruim
+     <input  type="radio" value="3" name="limClient" ngModel> Regular
+     <input  type="radio" value="4" name="limClient" ngModel> Bom
+     <input  type="radio" value="5" name="limClient" ngModel> Excelente
+    </div>
+  </div>  <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
+    <span style="margin-left: 1%;">Ambiente com Circulção de Ar:</span>
+    <div style="margin-left: 1%;" class="row">
+     <input  type="radio" value="1" name="ambClient" ngModel> Pessimo
+     <input  type="radio" value="2" name="ambClient" ngModel> Ruim
+     <input  type="radio" value="3" name="ambClient" ngModel> Regular
+     <input  type="radio" value="4" name="ambClient" ngModel> Bom
+     <input  type="radio" value="5" name="ambClient" ngModel> Excelente
+    </div>
+  </div>  <div class="row" id="PizzaRadio" *ngIf="this.isButtonVisible" > 
+    <span style="margin-left: 1%;">Higienização do Ambiente:</span>
+    <div style="margin-left: 1%;" class="row">
+     <input  type="radio" value="1" name="higAmbiente" ngModel> Pessimo
+     <input  type="radio" value="2" name="higAmbiente" ngModel> Ruim
+     <input  type="radio" value="3" name="higAmbiente" ngModel> Regular
+     <input  type="radio" value="4" name="higAmbiente" ngModel> Bom
+     <input  type="radio" value="5" name="higAmbiente" ngModel> Excelente
+    </div>
+  </div>
+  <button (click)="avaliaEmpresa()" *ngIf="this.isButtonVisible">Avaliar Empresa</button>
 </ion-content>

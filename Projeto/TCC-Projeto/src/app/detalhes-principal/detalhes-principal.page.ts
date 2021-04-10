@@ -23,7 +23,7 @@ export class DetalhesPrincipalPage implements OnInit {
   teste9:any;
   teste10:any;
   teste11:any;
-    
+  gelAmbiente:any;
 
   ngOnInit() {
     console.log(this.route.snapshot.paramMap.getAll('billing')+' :resultado da tela anterior') 
@@ -86,5 +86,11 @@ export class DetalhesPrincipalPage implements OnInit {
       var text = document.getElementById('habPizza').innerHTML = 'Detalhes';
       
     } 
+  }
+
+  avaliaEmpresa(event:any)
+  {//enviar os radio button 
+    console.log(this.gelAmbiente);
+    //enviar os radio para banco
   }
 }
