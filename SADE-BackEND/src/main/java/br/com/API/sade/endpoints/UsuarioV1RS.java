@@ -46,7 +46,7 @@ public class UsuarioV1RS {
 
 
     @RequestMapping(value = "consultarUsuario", method = GET)
-    public ResponseEntity<Usuario> pega(@RequestParam(value = "id", required = true) final Long id){
+    public ResponseEntity<Usuario> consultarUsuario(@RequestParam(value = "id", required = true) final Long id){
 
         var retorno = clienteRepository.buscarUsuarioPorIdV2(id);
         return new ResponseEntity<>(retorno, HttpStatus.OK);

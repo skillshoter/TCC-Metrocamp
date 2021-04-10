@@ -1,8 +1,11 @@
 /opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/endpoints/UsuarioV1RS.java
-/opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/model/Empresa.java
+/opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/model/Estabelecimento.java
+/opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/repository/EstabelecimentoRepository.java
 /opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/APISadeApplication.java
 /opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/dto/UsuarioDTO.java
+/opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/services/IEstabelecimentoRepository.java
 /opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/repository/UsuarioRepository.java
+/opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/dto/EstabelecimentoDTO.java
 /opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/model/Usuario.java
+/opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/endpoints/EstabelecimentoV1RS.java
 /opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/services/IUsuarioRepository.java
-/opt/TCC-Metrocamp/SADE-BackEND/src/main/java/br/com/API/sade/endpoints/EmpresaV1RS.java

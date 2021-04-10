@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.confidencecambio</groupId>
-	<artifactId>java-basico</artifactId>
+	<artifactId>API-SADE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>API-SADE</name>
 	<description>prova básica de java</description>
