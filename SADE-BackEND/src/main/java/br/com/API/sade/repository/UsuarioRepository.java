@@ -2,15 +2,17 @@ package br.com.API.sade.repository;
 
 import br.com.API.sade.dto.UsuarioDTO;
 import br.com.API.sade.model.Usuario;
-import br.com.API.sade.services.IClienteRepository;
+import br.com.API.sade.services.IUsuarioRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
-public class ClienteRepository implements IClienteRepository {
+@Transactional
+public class UsuarioRepository implements IUsuarioRepository {
 
     @PersistenceContext
     private EntityManager em;
@@ -22,15 +24,21 @@ public class ClienteRepository implements IClienteRepository {
                 " FROM Usuario AS u WHERE u.id = 2";
 
         final var query = em.createQuery(jpql);
-       // query.setParameter("id", id);
+
         return query.getResultList();
     }
 
     @Override
-    public void criarUsuario(String login, String nome,
-                             int telefone, String email, String senha) {
-        em.persist(new Usuario(login, nome, telefone,email,senha));
+    public void criarUsuario(Usuario usuario) {
+        em.persist(usuario);
     }
+
+    @Override
+    public Usuario buscarUsuarioPorIdV2(Long id){
+        return em.find(Usuario.class, id);
+    }
+
+
 }
 
     /*

@@ -1,8 +1,8 @@
-br\com\API\sade\dto\UsuarioDTO.class
-br\com\API\sade\model\Usuario.class
-br\com\API\sade\ProvaNathanApplication.class
-br\com\API\sade\model\Empresa.class
-br\com\API\sade\services\IClienteRepository.class
-br\com\API\sade\endpoints\EmpresaV1RS.class
-br\com\API\sade\endpoints\UsuarioV1RS.class
-br\com\API\sade\repository\ClienteRepository.class
+br/com/API/sade/dto/UsuarioDTO.class
+br/com/API/sade/endpoints/EmpresaV1RS.class
+br/com/API/sade/services/IUsuarioRepository.class
+br/com/API/sade/endpoints/UsuarioV1RS.class
+br/com/API/sade/repository/UsuarioRepository.class
+br/com/API/sade/model/Usuario.class
+br/com/API/sade/model/Empresa.class
+br/com/API/sade/APISadeApplication.class
