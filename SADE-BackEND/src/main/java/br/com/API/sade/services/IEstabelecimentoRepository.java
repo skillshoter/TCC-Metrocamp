@@ -13,5 +13,8 @@ public interface IEstabelecimentoRepository {
 
     List<UsuarioDTO> buscarUsuarioPorId(Long Id);
     List<EstabelecimentoDTO> buscarEstabelecimentoPorNome(String nome);
+    List<EstabelecimentoDTO> buscarResumoPorNome(String nome);
     void criarEmpresa(Estabelecimento estabelecimento);
+    void avaliarEstabelecimento(Long id, Integer alcool_disponivel, Integer aglomeracao, Integer funcionarios_mascara, Integer clientes_mascara,
+                                Integer circulacao_ar, Integer higienizacao, Integer controle_entrada, Integer limite_pessoas);
 }

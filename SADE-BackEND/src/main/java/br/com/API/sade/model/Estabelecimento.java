@@ -1,8 +1,6 @@
 package br.com.API.sade.model;
 
 
-import org.intellij.lang.annotations.Pattern;
-
 import javax.persistence.*;
 
 //EMPRESA:
@@ -20,48 +18,48 @@ public class Estabelecimento {
     private Long id;
 
 
-    @Pattern("")
     private String nome;
 
     @Column
     private String endereco;
 
     @Column
-    private int alcool_disponivel;
+    private Integer alcool_disponivel;
 
     @Column
-    private int aglomeracao;
+    private Integer aglomeracao;
 
     @Column
-    private int funcionarios_mascara;
+    private Integer funcionarios_mascara;
 
     @Column
-    private int clientes_mascara;
+    private Integer clientes_mascara;
 
     @Column
-    private int circulacao_ar;
+    private Integer circulacao_ar;
 
     @Column
-    private int higienizacao;
+    private Integer higienizacao;
 
     @Column
-    private int controle_entrada;
+    private Integer controle_entrada;
 
     @Column
-    private int limite_pessoas;
+    private Integer limite_pessoas;
 
     @Column
-    private int avaliacao_geral;
+    private Integer avaliacao_geral;
 
-    @Pattern("")
     private String descricao;
 
+    public Estabelecimento() {
+    }
 
-    public Estabelecimento(String nome, String endereco, int alcool_disponivel,
-                           int aglomeracao, int funcionarios_mascara,
-                           int clientes_mascara, int circulacao_ar, int higienizacao,
-                           int controle_entrada, int limite_pessoas,
-                           int avaliacao_geral, String descricao) {
+    public Estabelecimento(String nome, String endereco, Integer alcool_disponivel,
+                           Integer aglomeracao, Integer funcionarios_mascara,
+                           Integer clientes_mascara, Integer circulacao_ar, Integer higienizacao,
+                           Integer controle_entrada, Integer limite_pessoas,
+                           Integer avaliacao_geral, String descricao) {
         this.nome = nome;
         this.endereco = endereco;
         this.alcool_disponivel = alcool_disponivel;
@@ -100,75 +98,75 @@ public class Estabelecimento {
         this.endereco = endereco;
     }
 
-    public int getAlcool_disponivel() {
+    public Integer getAlcool_disponivel() {
         return alcool_disponivel;
     }
 
-    public void setAlcool_disponivel(int alcool_disponivel) {
+    public void setAlcool_disponivel(Integer alcool_disponivel) {
         this.alcool_disponivel = alcool_disponivel;
     }
 
-    public int getAglomeracao() {
+    public Integer getAglomeracao() {
         return aglomeracao;
     }
 
-    public void setAglomeracao(int aglomeracao) {
+    public void setAglomeracao(Integer aglomeracao) {
         this.aglomeracao = aglomeracao;
     }
 
-    public int getFuncionarios_mascara() {
+    public Integer getFuncionarios_mascara() {
         return funcionarios_mascara;
     }
 
-    public void setFuncionarios_mascara(int funcionarios_mascara) {
+    public void setFuncionarios_mascara(Integer funcionarios_mascara) {
         this.funcionarios_mascara = funcionarios_mascara;
     }
 
-    public int getClientes_mascara() {
+    public Integer getClientes_mascara() {
         return clientes_mascara;
     }
 
-    public void setClientes_mascara(int clientes_mascara) {
+    public void setClientes_mascara(Integer clientes_mascara) {
         this.clientes_mascara = clientes_mascara;
     }
 
-    public int getCirculacao_ar() {
+    public Integer getCirculacao_ar() {
         return circulacao_ar;
     }
 
-    public void setCirculacao_ar(int circulacao_ar) {
+    public void setCirculacao_ar(Integer circulacao_ar) {
         this.circulacao_ar = circulacao_ar;
     }
 
-    public int getHigienizacao() {
+    public Integer getHigienizacao() {
         return higienizacao;
     }
 
-    public void setHigienizacao(int higienizacao) {
+    public void setHigienizacao(Integer higienizacao) {
         this.higienizacao = higienizacao;
     }
 
-    public int getControle_entrada() {
+    public Integer getControle_entrada() {
         return controle_entrada;
     }
 
-    public void setControle_entrada(int controle_entrada) {
+    public void setControle_entrada(Integer controle_entrada) {
         this.controle_entrada = controle_entrada;
     }
 
-    public int getLimite_pessoas() {
+    public Integer getLimite_pessoas() {
         return limite_pessoas;
     }
 
-    public void setLimite_pessoas(int limite_pessoas) {
+    public void setLimite_pessoas(Integer limite_pessoas) {
         this.limite_pessoas = limite_pessoas;
     }
 
-    public int getAvaliacao_geral() {
+    public Integer getAvaliacao_geral() {
         return avaliacao_geral;
     }
 
-    public void setAvaliacao_geral(int avaliacao_geral) {
+    public void setAvaliacao_geral(Integer avaliacao_geral) {
         this.avaliacao_geral = avaliacao_geral;
     }
 

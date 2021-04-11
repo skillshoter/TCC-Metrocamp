@@ -1,6 +1,11 @@
 package br.com.API.sade.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_EMPTY)
 public class EstabelecimentoDTO {
 
     private Long id;
@@ -9,30 +14,40 @@ public class EstabelecimentoDTO {
 
     private String endereco;
 
-    private int alcool_disponivel;
+    private Integer alcool_disponivel;
 
-    private int aglomeracao;
+    private Integer aglomeracao;
 
-    private int funcionarios_mascara;
+    private Integer funcionarios_mascara;
 
-    private int clientes_mascara;
+    private Integer clientes_mascara;
 
-    private int circulacao_ar;
+    private Integer circulacao_ar;
 
-    private int higienizacao;
+    private Integer higienizacao;
 
-    private int controle_entrada;
+    private Integer controle_entrada;
 
-    private int limite_pessoas;
+    private Integer limite_pessoas;
 
-    private int avaliacao_geral;
+    private Integer avaliacao_geral;
 
     private String descricao;
 
-    public EstabelecimentoDTO(Long id, String nome, String endereco, int alcool_disponivel,
-                              int aglomeracao, int funcionarios_mascara, int clientes_mascara,
-                              int circulacao_ar, int higienizacao, int controle_entrada,
-                              int limite_pessoas, int avaliacao_geral, String descricao) {
+    //getNome da Empresa ou CNPJ ou Endereço
+    //RETORNA ID, NOME DA EMPRESA, ENDEREÇO, AVALIACAO GERAL
+
+    public EstabelecimentoDTO(Long id, String nome, String endereco, Integer avaliacao_geral ) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.avaliacao_geral = avaliacao_geral;
+
+    }
+    public EstabelecimentoDTO(Long id, String nome, String endereco, Integer alcool_disponivel,
+                              Integer aglomeracao, Integer funcionarios_mascara, Integer clientes_mascara,
+                              Integer circulacao_ar, Integer higienizacao, Integer controle_entrada,
+                              Integer limite_pessoas, Integer avaliacao_geral, String descricao) {
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;

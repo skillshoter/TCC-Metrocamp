@@ -41,10 +41,24 @@ public class EstabelecimentoRepository implements IEstabelecimentoRepository {
     public List<EstabelecimentoDTO> buscarEstabelecimentoPorNome(String nome) {
         final String jpql = "SELECT NEW " + EstabelecimentoDTO.class.getName() +
                 " (e.id, e.nome, e.endereco, e.alcool_disponivel," +
-                "e.aglomeracao, e.funcionarios.mascara, e.clientes_mascara," +
-                "e.circulacao_ar, e.higienizacao, e.controle_entrada, e.limite_pessoas," +
-                "e.avaliacao_geral)" +
-                " FROM "+Estabelecimento.class+" AS e WHERE e.nome = :nome";
+                " e.aglomeracao, e.funcionarios_mascara, e.clientes_mascara," +
+                " e.circulacao_ar, e.higienizacao, e.controle_entrada, e.limite_pessoas," +
+                " e.avaliacao_geral, e.descricao)" +
+                " FROM Estabelecimento as e WHERE e.nome = :nome";
+
+        final var query = em.createQuery(jpql);
+        query.setParameter("nome", nome);
+
+
+        return query.getResultList();
+    }
+
+    @Override
+    public List<EstabelecimentoDTO> buscarResumoPorNome(String nome) {
+        final String jpql = "SELECT NEW " + EstabelecimentoDTO.class.getName() +
+                " (e.id, e.nome, e.endereco," +
+                " e.avaliacao_geral)" +
+                " FROM Estabelecimento as e WHERE e.nome = :nome";
 
         final var query = em.createQuery(jpql);
         query.setParameter("nome", nome);
@@ -56,6 +70,21 @@ public class EstabelecimentoRepository implements IEstabelecimentoRepository {
     @Override
     public void criarEmpresa(Estabelecimento estabelecimento) {
         em.persist(estabelecimento);
+    }
+
+    @Override
+    public void avaliarEstabelecimento(Long id, Integer alcool_disponivel, Integer aglomeracao, Integer funcionarios_mascara, Integer clientes_mascara,
+                                       Integer circulacao_ar, Integer higienizacao, Integer controle_entrada, Integer limite_pessoas) {
+        var estabelecimento = em.find(Estabelecimento.class, id);
+        estabelecimento.setAlcool_disponivel(alcool_disponivel);
+        estabelecimento.setAglomeracao(aglomeracao);
+        estabelecimento.setFuncionarios_mascara(funcionarios_mascara);
+        estabelecimento.setClientes_mascara(clientes_mascara);
+        estabelecimento.setHigienizacao(higienizacao);
+        estabelecimento.setCirculacao_ar(circulacao_ar);
+        estabelecimento.setControle_entrada(controle_entrada);
+        estabelecimento.setLimite_pessoas(limite_pessoas);
+        em.merge(estabelecimento);
     }
 
 }
