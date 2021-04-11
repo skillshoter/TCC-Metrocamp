@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AngularDelegate } from '@ionic/angular';
 
 
 @Component({
@@ -24,32 +25,48 @@ export class PrincipalPage implements OnInit {
 
   pesquisar(event:any)
   {
-      console.log("pesquisarNoBack");
-      console.log("valor do empresa:"+this.NameEmpresa);  
-      console.log("valor do cnpjEmpresa:"+this.CnpjEmpresa);
-      console.log("valor do endereco:"+this.Endereco);
-      this.http.get('http://localhost:3000/getEmpresa?nameEmpresa='+this.NameEmpresa+'&cnpj='+this.CnpjEmpresa+'&endereco='+this.Endereco).subscribe((data)=> {
-        console.log(data);
+      this.http.get('http://25.91.152.90:8080/estabelecimentos/consultarEstabelecimentoResumo?nome='+this.NameEmpresa+'&endereco='+this.Endereco).subscribe((data)=> {
         this.EmpresasList = data;
         if(Object.keys(data).length === 0)
         {
           alert("Não existe Empresa com estes parametros");
         }else
         {
-          console.log("Mostra Grid");
-          alert("Grid montada");//remover depois
-          this.ionViewDidLoad();//passar o DATA como parametro
+          this.ionViewDidLoadDefinitivo(data);
         }
       },(error)=> {
         console.log(error);
         alert("Consulta a API não encontrou o endereço.");
-        this.ionViewDidLoad();//colocar no alert alert("Grid montada");
+        this.ionViewDidLoad();//remover
         var result_style = document.getElementById('trGrid').style;
         result_style.display = 'flex'; 
       });
   }
 
-  public items: Array<any>;
+
+  public items:Array<any>;
+
+  ionViewDidLoadDefinitivo(data:Object) {
+    var itemss = [];
+    //SERIALIZAR JSON PARA OBJ
+    Object.keys(data).forEach(function(key) {
+      console.log('Key : ' + key + ', Value : ' + data[key].id)
+      console.log('Key : ' + key + ', Value : ' + data[key].nome)
+      console.log('Key : ' + key + ', Value : ' + data[key].endereco)
+      console.log('Key : ' + key + ', Value : ' + data[key].avaliacao_geral)
+      console.log('proximo')
+      console.log(data[key].id,  data[key].nome, data[key].endereco, data[key].avaliacao_geral)
+
+      var itemGrid = { id:data[key].id,  nome:data[key].nome, endereco:data[key].endereco, avaliacao_geral:data[key].avaliacao_geral }
+
+      
+      itemss.push([
+        itemGrid
+      ]);
+      console.log(itemss);//funcionando temos um objeto com as informaçoes do back // falta inserir no this.items
+    })
+     
+   }
 
   ionViewDidLoad() {
     //alterar o objeto para receber os valores do DATA
