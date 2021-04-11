@@ -53,10 +53,11 @@ export class PrincipalPage implements OnInit {
 
   ionViewDidLoad() {
     //alterar o objeto para receber os valores do DATA
+    //SERIALIZAR JSON PARA OBJ
        this.items = [
-           {  id:'1',title: 'Notatka 1', description: 'Opis notatki 1', nota:'3' },
-           {  id:'2',title: 'Notatka 2', description: 'Opis notatki 2', nota:'3' },
-           {  id:'3',title: 'Notatka 3', description: 'Opis notatki 3', nota:'3' }
+           {  id:'1',nome: 'Notatka 1', endereco: 'Opis notatki 1', avaliacao_geral:'3' },
+           {  id:'2',nome: 'Notatka 2', endereco: 'Opis notatki 2', avaliacao_geral:'3' },
+           {  id:'3',nome: 'Notatka 3', endereco: 'Opis notatki 3', avaliacao_geral:'3' }
        ];
    }
 

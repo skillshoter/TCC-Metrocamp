@@ -12,41 +12,49 @@ export class DetalhesPrincipalPage implements OnInit {
 
   public itemSend: any;
 
-  teste1:any;
-  teste2:any;
-  teste3:any;
-  teste4:any;
-  teste5:any;
-  teste6:any;
-  teste7:any;
-  teste8:any;
-  teste9:any;
-  teste10:any;
-  teste11:any;
+  nomeEmpresalbl:any;
+  descricaolbl:any;
+  notaGerallbl:any;
+  alcoolGellbl:any;
+  funcionarioMasklbl:any;
+  clientesMasclbl:any;
+  aglomeracaoReclbl:any;
+  controlEntradalbl:any;
+  limiteClientelbl:any;
+  ambienteCirculacaolbl:any;
+  higienizacaoAmbientelbl:any;
   gelAmbiente:any;
+  funcMask:any;
+  cliMask:any;
+  agloRec:any;
+  contrEntrada:any;
+  limClient:any;
+  ambClient:any;
+  higAmbiente:any;
 
   ngOnInit() {
     console.log(this.route.snapshot.paramMap.getAll('billing')+' :resultado da tela anterior') 
     this.itemSend = this.route.snapshot.paramMap.getAll('billing')
 
     
-    interface item {  id: String,title: String, description: String , nota: String };
+    interface item {  id: Number,title: String, description: String , avaliacao_geral: Number };
     var obj:item = JSON.parse(this.itemSend)
-    console.log(obj.id +' :objeto deserializado mostrando ID')
-    console.log('usar API para pegar detalhes da empresa com o id: ' + obj.id)
+    console.log(obj.id +' :objeto deserializado mostrando ID da empresa')
+    console.log('usar API para pegar detalhes da empresa com o id da empresa: ' + obj.id)
     console.log('fazer get API')
+    //API GET
 
-    this.teste1 = 'poha1';
-    this.teste2 = 'poha2';
-    this.teste3 = 'poha3';
-    this.teste4 = 'poha4';
-    this.teste5 = 'poha5';
-    this.teste6 = 'poha6';
-    this.teste7 = 'poha7';
-    this.teste8 = 'poha8';
-    this.teste9 = 'poha9';
-    this.teste10 = 'poha10';
-    this.teste11 = 'poha11';
+    this.nomeEmpresalbl = 'Anchovas de portugual estremesse as novinhas que traficam na rua';
+    this.descricaolbl = 'valor vindo do bac2';
+    this.notaGerallbl = 34;
+    this.alcoolGellbl = 10;
+    this.funcionarioMasklbl = 12;
+    this.clientesMasclbl = 12;
+    this.aglomeracaoReclbl = 10;
+    this.controlEntradalbl = 90;
+    this.limiteClientelbl = 90;
+    this.ambienteCirculacaolbl = 90;
+    this.higienizacaoAmbientelbl = 90;
     
     document.getElementById('inputTeste1').setAttribute("disabled","disabled");
     document.getElementById('inputTeste2').setAttribute("disabled","disabled");
@@ -89,8 +97,24 @@ export class DetalhesPrincipalPage implements OnInit {
   }
 
   avaliaEmpresa(event:any)
-  {//enviar os radio button 
-    console.log(this.gelAmbiente);
-    //enviar os radio para banco
+  {
+    console.log(this.gelAmbiente + ' gelAmbiente');
+    console.log(this.funcMask + ' funcMask');
+    console.log(this.cliMask + ' cliMask');
+    console.log(this.agloRec + ' agloRec');
+    console.log(this.contrEntrada + ' contrEntrada');
+    console.log(this.limClient + ' limClient');
+    console.log(this.ambClient + ' ambClient');
+    console.log(this.higAmbiente + ' higAmbiente');
+
+    if((this.higAmbiente == undefined)||(this.ambClient == undefined)||(this.limClient == undefined)||(this.gelAmbiente == undefined)||(this.funcMask == undefined)||(this.cliMask == undefined)||(this.agloRec == undefined)||(this.contrEntrada == undefined)){
+      alert("Marque todos os campos!")
+    }else
+    {
+      //enviar os radio para banco pela API
+      alert("envia dados API para insert de novas informaçoes")
+      //API PUT
+    }
+    
   }
 }

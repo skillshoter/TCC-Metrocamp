@@ -40,9 +40,9 @@
       <ion-list padding *ngFor="let item of items">
         <ion-item (click)="viewItem(item)">
           <p style="margin-left: 5.5%; width: 20%;">{{item.id}}</p>
-          <p style="margin-left: 2.5%; width: 20%;">{{item.title}}</p>
-          <p style="margin-left: 2.5%; width: 20%;">{{item.description}}</p>
-          <p style="margin-left: 2.5%; width: 20%;">{{item.nota}}</p>
+          <p style="margin-left: 2.5%; width: 20%;">{{item.nome}}</p>
+          <p style="margin-left: 2.5%; width: 20%;">{{item.endereco}}</p>
+          <p style="margin-left: 2.5%; width: 20%;">{{item.avaliacao_geral}}</p>
             <button class="buttonGrid" (click)="detalhesRowGrid(item)" >Ver</button>
         </ion-item>
     </ion-list>
