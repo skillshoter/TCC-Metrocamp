@@ -2,6 +2,7 @@ package br.com.API.sade.model;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 //EMPRESA:
 //ID, Nome, endereço, avaliação geral, descrição, boolean alcoolemgelnoambiente,
@@ -16,7 +17,6 @@ public class Estabelecimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     private String nome;
 
@@ -51,6 +51,10 @@ public class Estabelecimento {
     private Integer avaliacao_geral;
 
     private String descricao;
+
+    @OneToMany(mappedBy="estabelecimento")
+    private Set<Avaliacao> avaliacao;
+
 
     public Estabelecimento() {
     }

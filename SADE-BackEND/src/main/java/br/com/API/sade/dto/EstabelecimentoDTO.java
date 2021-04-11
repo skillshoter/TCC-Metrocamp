@@ -62,4 +62,56 @@ public class EstabelecimentoDTO {
         this.avaliacao_geral = avaliacao_geral;
         this.descricao = descricao;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public Integer getAlcool_disponivel() {
+        return alcool_disponivel;
+    }
+
+    public Integer getAglomeracao() {
+        return aglomeracao;
+    }
+
+    public Integer getFuncionarios_mascara() {
+        return funcionarios_mascara;
+    }
+
+    public Integer getClientes_mascara() {
+        return clientes_mascara;
+    }
+
+    public Integer getCirculacao_ar() {
+        return circulacao_ar;
+    }
+
+    public Integer getHigienizacao() {
+        return higienizacao;
+    }
+
+    public Integer getControle_entrada() {
+        return controle_entrada;
+    }
+
+    public Integer getLimite_pessoas() {
+        return limite_pessoas;
+    }
+
+    public Integer getAvaliacao_geral() {
+        return avaliacao_geral;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
 }

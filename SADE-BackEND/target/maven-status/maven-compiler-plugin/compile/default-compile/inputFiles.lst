@@ -1,11 +1,14 @@
-D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\APISadeApplication.java
 D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\dto\EstabelecimentoDTO.java
 D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\endpoints\UsuarioV1RS.java
 D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\model\Usuario.java
 D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\services\IEstabelecimentoRepository.java
-D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\services\IUsuarioRepository.java
 D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\repository\UsuarioRepository.java
 D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\repository\EstabelecimentoRepository.java
+D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\model\Estabelecimento.java
+D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\repository\AvaliacaoRepository.java
+D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\services\IAvaliacaoRepository.java
+D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\APISadeApplication.java
+D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\services\IUsuarioRepository.java
+D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\model\Avaliacao.java
 D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\endpoints\EstabelecimentoV1RS.java
 D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\dto\UsuarioDTO.java
-D:\TCC-Metrocamp\SADE-BackEND\src\main\java\br\com\API\sade\model\Estabelecimento.java

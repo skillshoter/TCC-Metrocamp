@@ -53,6 +53,16 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public Usuario(Long id, String login, String senha, String email, String nome, String sobrenome, long telefone) {
+        this.id = id;
+        this.login = login;
+        this.senha = senha;
+        this.email = email;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.telefone = telefone;
+    }
+
     public Long getId() {
         return id;
     }

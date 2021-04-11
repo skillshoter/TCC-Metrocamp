@@ -68,6 +68,21 @@ public class EstabelecimentoRepository implements IEstabelecimentoRepository {
     }
 
     @Override
+    public List<EstabelecimentoDTO> buscarResumoPorEndereco(String endereco) {
+        final String jpql = "SELECT NEW " + EstabelecimentoDTO.class.getName() +
+                " (e.id, e.nome, e.endereco," +
+                " e.avaliacao_geral)" +
+                " FROM Estabelecimento as e WHERE e.endereco = :endereco";
+
+        final var query = em.createQuery(jpql);
+        query.setParameter("endereco", endereco);
+
+
+        return query.getResultList();
+    }
+
+
+    @Override
     public void criarEmpresa(Estabelecimento estabelecimento) {
         em.persist(estabelecimento);
     }

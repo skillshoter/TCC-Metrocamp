@@ -7,10 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
+//25.91.152.90:8080//estabelecimentos/consultarEstabelecimentoResumo
 @CrossOrigin
 @RestController
 @RequestMapping("/estabelecimentos")
@@ -38,9 +41,16 @@ public class EstabelecimentoV1RS {
     }
 
     @RequestMapping(value = "consultarEstabelecimentoResumo", method = GET)
-    public ResponseEntity<List<EstabelecimentoDTO>> consultarEstabelecimentoResumo(@RequestParam(value = "nome", required = true) final String nome)
+    public ResponseEntity<List<EstabelecimentoDTO>> consultarEstabelecimentoResumo(@RequestParam(value = "nome", required = false) final String nome,
+                                                                                   @RequestParam(value = "endereco", required = false) final String endereco)
     {
-        var retorno = estabelecimentoRepository.buscarResumoPorNome(nome);
+        List<EstabelecimentoDTO> retorno = new ArrayList<>();
+        if(nome!=null && !nome.isEmpty()) {
+            estabelecimentoRepository.buscarResumoPorNome(nome).stream().forEach(e-> retorno.add(e));
+        }
+        if (endereco != null && !endereco.isEmpty() ){
+            estabelecimentoRepository.buscarResumoPorEndereco(endereco).stream().forEach(e-> retorno.add(e));;
+        }
         return new ResponseEntity<>(retorno, HttpStatus.OK);
     }
 
