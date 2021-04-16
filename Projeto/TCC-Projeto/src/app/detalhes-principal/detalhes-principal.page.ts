@@ -41,7 +41,8 @@ export class DetalhesPrincipalPage implements OnInit {
     var obj:item = JSON.parse(this.itemSend)
     console.log(obj.id +' :objeto deserializado mostrando ID da empresa')
     console.log('usar API para pegar detalhes da empresa com o id da empresa: ' + obj.id)
-    console.log('fazer get API')
+    console.log('fazer get API  --------------')
+    
     //API GET
 
     this.nomeEmpresalbl = 'Anchovas de portugual estremesse as novinhas que traficam na rua';

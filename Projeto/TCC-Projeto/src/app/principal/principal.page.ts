@@ -59,23 +59,23 @@ export class PrincipalPage implements OnInit {
 
       var itemGrid = { id:data[key].id,  nome:data[key].nome, endereco:data[key].endereco, avaliacao_geral:data[key].avaliacao_geral }
 
-      
-      itemss.push([
-        itemGrid
-      ]);
+      itemss.push(itemGrid);//testar
+
       console.log(itemss);//funcionando temos um objeto com as informaçoes do back // falta inserir no this.items
     })
-     
+
+    this.items = itemss;
+    console.log('funcionou bora estourar um champagne' + this.items);
    }
 
   ionViewDidLoad() {
     //alterar o objeto para receber os valores do DATA
     //SERIALIZAR JSON PARA OBJ
-       this.items = [
-           {  id:'1',nome: 'Notatka 1', endereco: 'Opis notatki 1', avaliacao_geral:'3' },
-           {  id:'2',nome: 'Notatka 2', endereco: 'Opis notatki 2', avaliacao_geral:'3' },
-           {  id:'3',nome: 'Notatka 3', endereco: 'Opis notatki 3', avaliacao_geral:'3' }
-       ];
+    var itemss = [{  id:'1',nome: 'dados mocados', endereco: 'Opis notatki 1', avaliacao_geral:'3' },
+    {  id:'2',nome: 'Notatka 2', endereco: 'Opis notatki 2', avaliacao_geral:'3' },
+    {  id:'3',nome: 'Empresa Brunim', endereco: 'Teste 3', avaliacao_geral:'10' }];
+
+       this.items = itemss;
    }
 
    detalhesRowGrid(item)
