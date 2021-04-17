@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
+import { HttpClient } from '@angular/common/http';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-detalhes-principal',
@@ -8,7 +10,7 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class DetalhesPrincipalPage implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(public http: HttpClient,private route: ActivatedRoute) { }
 
   public itemSend: any;
 
@@ -31,8 +33,26 @@ export class DetalhesPrincipalPage implements OnInit {
   limClient:any;
   ambClient:any;
   higAmbiente:any;
-
+  empresa:any;
+  itemGrid:any;
   ngOnInit() {
+    interface obj {
+      id: number;
+      nome: string;
+      endereco: string;
+      alcool_disponivel: number;
+      funcionarios_mascara:number;
+      circulacao_ar:number;
+      higienizacao:number;
+      controle_entrada:number;
+      limite_pessoas:number;
+      avaliacao_geral:number;
+      descricao:number;
+      clientes_mascara:number;
+      notageral:number;
+      aglomeracao:number;
+  }
+
     console.log(this.route.snapshot.paramMap.getAll('billing')+' :resultado da tela anterior') 
     this.itemSend = this.route.snapshot.paramMap.getAll('billing')
 
@@ -42,21 +62,44 @@ export class DetalhesPrincipalPage implements OnInit {
     console.log(obj.id +' :objeto deserializado mostrando ID da empresa')
     console.log('usar API para pegar detalhes da empresa com o id da empresa: ' + obj.id)
     console.log('fazer get API  --------------')
-    
-    //API GET
+    this.http.get<obj>('http://25.91.152.90:8080/estabelecimentos/consultarEstabelecimentoCompletoPorId?id='+obj.id).subscribe((data)=> {
+        this.empresa = data;
+        if(Object.keys(data).length === 0)
+        {
+          alert("Não existe detalhes desta empresa com estes parametros ");
+        }else
+        {
+            this.nomeEmpresalbl = data.nome;
+            this.descricaolbl =  data.descricao;
+            this.notaGerallbl = data.avaliacao_geral;
+            this.alcoolGellbl = data.alcool_disponivel;
+            this.funcionarioMasklbl = data.funcionarios_mascara;
+            this.clientesMasclbl = data.clientes_mascara;
+            this.aglomeracaoReclbl = data.aglomeracao;
+            this.controlEntradalbl = data.controle_entrada;
+            this.limiteClientelbl = data.limite_pessoas;
+            this.ambienteCirculacaolbl = data.circulacao_ar;
+            this.higienizacaoAmbientelbl =data.higienizacao;
+            
+        }
+      },(error)=> {
+        console.log(error);
+        alert("Consulta a API não encontrou o endereço.");
+        this.nomeEmpresalbl = 'Dados mocados';
+        this.descricaolbl = 'valor vindo do moc';
+        this.notaGerallbl = 34;
+        this.alcoolGellbl = 10;
+        this.funcionarioMasklbl = 12;
+        this.clientesMasclbl = 12;
+        this.aglomeracaoReclbl = 10;
+        this.controlEntradalbl = 90;
+        this.limiteClientelbl = 90;
+        this.ambienteCirculacaolbl = 90;
+        this.higienizacaoAmbientelbl = 90;
+        var result_style = document.getElementById('trGrid').style;
+        result_style.display = 'flex'; 
+      });
 
-    this.nomeEmpresalbl = 'Anchovas de portugual estremesse as novinhas que traficam na rua';
-    this.descricaolbl = 'valor vindo do bac2';
-    this.notaGerallbl = 34;
-    this.alcoolGellbl = 10;
-    this.funcionarioMasklbl = 12;
-    this.clientesMasclbl = 12;
-    this.aglomeracaoReclbl = 10;
-    this.controlEntradalbl = 90;
-    this.limiteClientelbl = 90;
-    this.ambienteCirculacaolbl = 90;
-    this.higienizacaoAmbientelbl = 90;
-    
     document.getElementById('inputTeste1').setAttribute("disabled","disabled");
     document.getElementById('inputTeste2').setAttribute("disabled","disabled");
     
@@ -96,6 +139,8 @@ export class DetalhesPrincipalPage implements OnInit {
       
     } 
   }
+
+  
 
   avaliaEmpresa(event:any)
   {
