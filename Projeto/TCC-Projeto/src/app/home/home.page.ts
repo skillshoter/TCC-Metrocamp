@@ -32,14 +32,16 @@ export class HomePage {
         {
           console.log("redireciona tela Home");
           alert("Redirecionar nova tela");
+          this.route.navigate(['/principal']);
         }
       },(error)=> {
         console.log(error);
+        alert("Ocorreu um erro ao conectar ao site.");
       });
     }
 
     goCad(event:any)
     {
-      this.route.navigate(['/principal']);
+      this.route.navigate(['/cadastro-user']);
     }
 }
