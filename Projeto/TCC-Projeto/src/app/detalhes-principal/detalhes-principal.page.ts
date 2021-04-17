@@ -35,6 +35,8 @@ export class DetalhesPrincipalPage implements OnInit {
   higAmbiente:any;
   empresa:any;
   itemGrid:any;
+  idEmpresa:any;
+
   ngOnInit() {
     interface obj {
       id: number;
@@ -69,6 +71,7 @@ export class DetalhesPrincipalPage implements OnInit {
           alert("Não existe detalhes desta empresa com estes parametros ");
         }else
         {
+            this.idEmpresa = data.id;
             this.nomeEmpresalbl = data.nome;
             this.descricaolbl =  data.descricao;
             this.notaGerallbl = data.avaliacao_geral;
@@ -144,22 +147,50 @@ export class DetalhesPrincipalPage implements OnInit {
 
   avaliaEmpresa(event:any)
   {
-    console.log(this.gelAmbiente + ' gelAmbiente');
-    console.log(this.funcMask + ' funcMask');
-    console.log(this.cliMask + ' cliMask');
-    console.log(this.agloRec + ' agloRec');
-    console.log(this.contrEntrada + ' contrEntrada');
-    console.log(this.limClient + ' limClient');
-    console.log(this.ambClient + ' ambClient');
-    console.log(this.higAmbiente + ' higAmbiente');
+   // console.log(this.gelAmbiente + ' gelAmbiente');
+   // console.log(this.funcMask + ' funcMask');
+   // console.log(this.cliMask + ' cliMask');
+   // console.log(this.agloRec + ' agloRec');
+   // console.log(this.contrEntrada + ' contrEntrada');
+   // console.log(this.limClient + ' limClient');
+   // console.log(this.ambClient + ' ambClient');
+   // console.log(this.higAmbiente + ' higAmbiente');
 
     if((this.higAmbiente == undefined)||(this.ambClient == undefined)||(this.limClient == undefined)||(this.gelAmbiente == undefined)||(this.funcMask == undefined)||(this.cliMask == undefined)||(this.agloRec == undefined)||(this.contrEntrada == undefined)){
       alert("Marque todos os campos!")
     }else
     {
       //enviar os radio para banco pela API
+      console.log(this.idEmpresa + ' :ID empresa');
       alert("envia dados API para insert de novas informaçoes")
-      //API PUT
+
+      const obj = { 
+        idEstabelecimento:Number(this.idEmpresa),
+        idUsuario:Number(3),//pegar no sistema
+        alcool: Number(this.gelAmbiente),
+        aglomeracao:Number(this.agloRec),
+        funcionario: Number(this.funcMask),
+        clientes: Number(this.cliMask),
+        higienizacao: Number(this.higAmbiente),
+        circulacao: Number(this.ambClient),
+        controle: Number(this.contrEntrada),
+        limite:Number(this.limClient)
+       };
+       
+      const  requestUrl = 'http://25.91.152.90:8080/estabelecimentos/avaliarEstabelecimento';
+
+      this.http.post(requestUrl, obj, { headers: { 'Content-Type': 'application/json' } }).subscribe(
+        (val) => {
+            console.log("POST call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("POST call in error", response);
+        },
+        () => {
+            console.log("The POST observable is now completed.");
+        });
+      
     }
     
   }
