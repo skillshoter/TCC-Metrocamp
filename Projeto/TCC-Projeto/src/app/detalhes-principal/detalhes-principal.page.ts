@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { HttpClient } from '@angular/common/http';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-detalhes-principal',
@@ -13,7 +14,6 @@ export class DetalhesPrincipalPage implements OnInit {
   constructor(public http: HttpClient,private route: ActivatedRoute) { }
 
   public itemSend: any;
-
   nomeEmpresalbl:any;
   descricaolbl:any;
   notaGerallbl:any;
@@ -36,6 +36,8 @@ export class DetalhesPrincipalPage implements OnInit {
   empresa:any;
   itemGrid:any;
   idEmpresa:any;
+
+  isCollapsed = false;
 
   ngOnInit() {
     interface obj {
@@ -177,12 +179,16 @@ export class DetalhesPrincipalPage implements OnInit {
         limite:Number(this.limClient)
        };
        
-      const  requestUrl = 'http://25.91.152.90:8080/estabelecimentos/avaliarEstabelecimento';
+      const  requestUrl = 'http://25.91.152.90:8080/avaliar/avaliarEstabelecimento?idEstabelecimento='+this.idEmpresa+'&idUsuario='+3+
+      '&alcool='+this.gelAmbiente+'&aglomeracao='+this.agloRec+'&funcionario='+this.funcMask+'&clientes='+this.cliMask+
+      '&higienizacao='+this.higAmbiente+'&circulacao='+this.ambClient+'&controle='+this.contrEntrada+'&limite='+this.limClient;
 
-      this.http.post(requestUrl, obj, { headers: { 'Content-Type': 'application/json' } }).subscribe(
+
+      this.http.post(requestUrl, { headers: { 'Content-Type': 'application/json' } }).subscribe(
         (val) => {
             console.log("POST call successful value returned in body", 
                         val);
+                        alert('Avaliação Realizada');
         },
         response => {
             console.log("POST call in error", response);
