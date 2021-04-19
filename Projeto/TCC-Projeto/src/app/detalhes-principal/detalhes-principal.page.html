@@ -1,9 +1,12 @@
 <ion-header>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </ion-header>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"  aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarTogglerDemo02">
+  <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse"
+    data-target="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
+    (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarTogglerDemo02">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -24,126 +27,170 @@
 </nav>
 
 <ion-content>
-<div id="divDetalhes">
-  <div class="row" >
-    <ion-span class="col" style="font-weight:bold" id="teste1" >Nome da Empresa:</ion-span>
-    <ion-input class="input" [(ngModel)]="nomeEmpresalbl" id="inputTeste1" ></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste2">Descrição:</ion-span>
-    <ion-input [(ngModel)]="descricaolbl" id="inputTeste2" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste3">Nota Geral:</ion-span>
-    <ion-input [(ngModel)]="notaGerallbl" id="inputTeste3" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste4">Alcool em Gel no ambiente:</ion-span>
-    <ion-input [(ngModel)]="alcoolGellbl" id="inputTeste4" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste5">Funcionarios utilizam mascaras:</ion-span>
-    <ion-input [(ngModel)]="funcionarioMasklbl" id="inputTeste5" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste6">Clientes utilizam mascaras:</ion-span>
-    <ion-input [(ngModel)]="clientesMasclbl" id="inputTeste6" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste7">Aglomeração no Recinto:</ion-span>
-    <ion-input [(ngModel)]="aglomeracaoReclbl" id="inputTeste7" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste8">Controle de Entrada:</ion-span>
-    <ion-input [(ngModel)]="controlEntradalbl" id="inputTeste8" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste9">Limite de Cliente:</ion-span>
-    <ion-input [(ngModel)]="limiteClientelbl" id="inputTeste9" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste10">Ambiente com Circulação de Ar:</ion-span>
-    <ion-input [(ngModel)]="ambienteCirculacaolbl" id="inputTeste10" class="input"></ion-input>
-  </div>
-  <div class="row">
-    <ion-span class="col" style="font-weight:bold" id="teste11">Higienização do Ambiente:</ion-span>
-    <ion-input [(ngModel)]="higienizacaoAmbientelbl" id="inputTeste11" class="input"></ion-input>
-  </div>
-</div>
-  <button class="buttonGrid" (click)="habilitaPizza()" id="habPizza" >Avalie</button>
-  <div class="row" id="AvaliaRadio" *ngIf="this.isButtonVisible" > 
-    <span style="margin-left: 1%; font-weight:bold;">Alcool em gel no ambiente:</span>
-    <div style="margin-left: 1%;" class="row">
-     <input  type="radio" class="radioButton" value="1" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Pessimo
-     <input  type="radio" class="radioButton" value="2" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Ruim
-     <input  type="radio" class="radioButton" value="3" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Regular
-     <input  type="radio" class="radioButton" value="4" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Bom
-     <input  type="radio" class="radioButton" value="5" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Excelente
+  <div id="divDetalhes">
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste1">Nome da Empresa:</ion-span>
+        <ion-input class="input" [(ngModel)]="nomeEmpresalbl" id="inputTeste1"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste2">Descrição:</ion-span>
+        <ion-input [(ngModel)]="descricaolbl" id="inputTeste2" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste3">Nota Geral:</ion-span>
+        <ion-input [(ngModel)]="notaGerallbl" id="inputTeste3" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste4">Alcool em Gel no ambiente:</ion-span>
+        <ion-input [(ngModel)]="alcoolGellbl" id="inputTeste4" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste5">Funcionarios utilizam mascaras:</ion-span>
+        <ion-input [(ngModel)]="funcionarioMasklbl" id="inputTeste5" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste6">Clientes utilizam mascaras:</ion-span>
+        <ion-input [(ngModel)]="clientesMasclbl" id="inputTeste6" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste7">Aglomeração no Recinto:</ion-span>
+        <ion-input [(ngModel)]="aglomeracaoReclbl" id="inputTeste7" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste8">Controle de Entrada:</ion-span>
+        <ion-input [(ngModel)]="controlEntradalbl" id="inputTeste8" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste9">Limite de Cliente:</ion-span>
+        <ion-input [(ngModel)]="limiteClientelbl" id="inputTeste9" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste10">Ambiente com Circulação de Ar:</ion-span>
+        <ion-input [(ngModel)]="ambienteCirculacaolbl" id="inputTeste10" class="input"></ion-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ion-span style="font-weight:bold" id="teste11">Higienização do Ambiente:</ion-span>
+        <ion-input [(ngModel)]="higienizacaoAmbientelbl" id="inputTeste11" class="input"></ion-input>
+      </div>
     </div>
   </div>
-  <div class="row" id="AvaliaRadio" *ngIf="this.isButtonVisible" > 
-    <span style="margin-left: 1%; font-weight:bold">Funcionarios Mascaras:</span>
-    <div style="margin-left: 1%;" class="row">
-     <input  type="radio" class="radioButton" value="1" name="funcMask" [(ngModel)]="funcMask"> Pessimo
-     <input  type="radio" class="radioButton" value="2" name="funcMask" [(ngModel)]="funcMask"> Ruim
-     <input  type="radio" class="radioButton" value="3" name="funcMask" [(ngModel)]="funcMask"> Regular
-     <input  type="radio" class="radioButton" value="4" name="funcMask" [(ngModel)]="funcMask"> Bom
-     <input  type="radio" class="radioButton" value="5" name="funcMask" [(ngModel)]="funcMask"> Excelente
+  <button class="buttonGrid" (click)="habilitaPizza()" id="habPizza">Avalie</button>
+  <div class="row">
+    <div class="col" id="AvaliaRadio" *ngIf="this.isButtonVisible">
+      <span style="margin-left: 1%; font-weight:bold;">Alcool em gel no ambiente:</span>
+      <div style="margin-left: 1%;" class="col">
+        <input type="radio" class="radioButton" value="1" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Pessimo
+        <input type="radio" class="radioButton" value="2" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Ruim
+        <input type="radio" class="radioButton" value="3" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Regular
+        <input type="radio" class="radioButton" value="4" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Bom
+        <input type="radio" class="radioButton" value="5" name="gelAmbiente" [(ngModel)]="gelAmbiente"> Excelente
+      </div>
     </div>
-  </div>  <div class="row" id="AvaliaRadio" *ngIf="this.isButtonVisible" > 
-    <span style="margin-left: 1%; font-weight:bold">Clientes Mascaras:</span>
-    <div style="margin-left: 1%;" class="row">
-     <input  type="radio" class="radioButton" value="1" name="cliMask" [(ngModel)]="cliMask"> Pessimo
-     <input  type="radio" class="radioButton" value="2" name="cliMask" [(ngModel)]="cliMask"> Ruim
-     <input  type="radio" class="radioButton" value="3" name="cliMask" [(ngModel)]="cliMask"> Regular
-     <input  type="radio" class="radioButton" value="4" name="cliMask" [(ngModel)]="cliMask"> Bom
-     <input  type="radio" class="radioButton" value="5" name="cliMask" [(ngModel)]="cliMask"> Excelente
+  </div>
+  <div class="row">
+    <div class="col" id="AvaliaRadio" *ngIf="this.isButtonVisible">
+      <span style="margin-left: 1%; font-weight:bold">Funcionarios Mascaras:</span>
+      <div style="margin-left: 1%;" class="col">
+        <input type="radio" class="radioButton" value="1" name="funcMask" [(ngModel)]="funcMask"> Pessimo
+        <input type="radio" class="radioButton" value="2" name="funcMask" [(ngModel)]="funcMask"> Ruim
+        <input type="radio" class="radioButton" value="3" name="funcMask" [(ngModel)]="funcMask"> Regular
+        <input type="radio" class="radioButton" value="4" name="funcMask" [(ngModel)]="funcMask"> Bom
+        <input type="radio" class="radioButton" value="5" name="funcMask" [(ngModel)]="funcMask"> Excelente
+      </div>
     </div>
-  </div>  <div class="row" id="AvaliaRadio" *ngIf="this.isButtonVisible" > 
-    <span style="margin-left: 1%; font-weight:bold">Aglomeração no Recinto:</span>
-    <div style="margin-left: 1%;" class="row">
-     <input  type="radio" class="radioButton" value="1" name="agloRec" [(ngModel)]="agloRec"> Pessimo
-     <input  type="radio" class="radioButton" value="2" name="agloRec" [(ngModel)]="agloRec"> Ruim
-     <input  type="radio" class="radioButton" value="3" name="agloRec" [(ngModel)]="agloRec"> Regular
-     <input  type="radio" class="radioButton" value="4" name="agloRec" [(ngModel)]="agloRec"> Bom
-     <input  type="radio" class="radioButton" value="5" name="agloRec" [(ngModel)]="agloRec"> Excelente
+  </div>
+  <div class="row">
+    <div class="col" id="AvaliaRadio" *ngIf="this.isButtonVisible">
+      <span style="margin-left: 1%; font-weight:bold">Clientes Mascaras:</span>
+      <div style="margin-left: 1%;" class="col">
+        <input type="radio" class="radioButton" value="1" name="cliMask" [(ngModel)]="cliMask"> Pessimo
+        <input type="radio" class="radioButton" value="2" name="cliMask" [(ngModel)]="cliMask"> Ruim
+        <input type="radio" class="radioButton" value="3" name="cliMask" [(ngModel)]="cliMask"> Regular
+        <input type="radio" class="radioButton" value="4" name="cliMask" [(ngModel)]="cliMask"> Bom
+        <input type="radio" class="radioButton" value="5" name="cliMask" [(ngModel)]="cliMask"> Excelente
+      </div>
     </div>
-  </div>  <div class="row" id="AvaliaRadio" *ngIf="this.isButtonVisible" > 
-    <span style="margin-left: 1%; font-weight:bold">Controle Entrada:</span>
-    <div style="margin-left: 1%;" class="row">
-     <input  type="radio" class="radioButton" value="1" name="contrEntrada" [(ngModel)]="contrEntrada"> Pessimo
-     <input  type="radio" class="radioButton" value="2" name="contrEntrada" [(ngModel)]="contrEntrada"> Ruim
-     <input  type="radio" class="radioButton" value="3" name="contrEntrada" [(ngModel)]="contrEntrada"> Regular
-     <input  type="radio" class="radioButton" value="4" name="contrEntrada" [(ngModel)]="contrEntrada"> Bom
-     <input  type="radio" class="radioButton" value="5" name="contrEntrada" [(ngModel)]="contrEntrada"> Excelente
+  </div>
+  <div class="row">
+    <div class="col" id="AvaliaRadio" *ngIf="this.isButtonVisible">
+      <span style="margin-left: 1%; font-weight:bold">Aglomeração no Recinto:</span>
+      <div style="margin-left: 1%;" class="col">
+        <input type="radio" class="radioButton" value="1" name="agloRec" [(ngModel)]="agloRec"> Pessimo
+        <input type="radio" class="radioButton" value="2" name="agloRec" [(ngModel)]="agloRec"> Ruim
+        <input type="radio" class="radioButton" value="3" name="agloRec" [(ngModel)]="agloRec"> Regular
+        <input type="radio" class="radioButton" value="4" name="agloRec" [(ngModel)]="agloRec"> Bom
+        <input type="radio" class="radioButton" value="5" name="agloRec" [(ngModel)]="agloRec"> Excelente
+      </div>
     </div>
-  </div>  <div class="row" id="AvaliaRadio" *ngIf="this.isButtonVisible" > 
-    <span style="margin-left: 1%; font-weight:bold">Limite Cliente:</span>
-    <div style="margin-left: 1%;" class="row">
-     <input  type="radio" class="radioButton" value="1" name="limClient" [(ngModel)]="limClient"> Pessimo
-     <input  type="radio" class="radioButton" value="2" name="limClient" [(ngModel)]="limClient"> Ruim
-     <input  type="radio" class="radioButton" value="3" name="limClient" [(ngModel)]="limClient"> Regular
-     <input  type="radio" class="radioButton" value="4" name="limClient" [(ngModel)]="limClient"> Bom
-     <input  type="radio" class="radioButton" value="5" name="limClient" [(ngModel)]="limClient"> Excelente
+  </div>
+  <div class="row">
+    <div class="col" id="AvaliaRadio" *ngIf="this.isButtonVisible">
+      <span style="margin-left: 1%; font-weight:bold">Controle Entrada:</span>
+      <div style="margin-left: 1%;" class="col">
+        <input type="radio" class="radioButton" value="1" name="contrEntrada" [(ngModel)]="contrEntrada"> Pessimo
+        <input type="radio" class="radioButton" value="2" name="contrEntrada" [(ngModel)]="contrEntrada"> Ruim
+        <input type="radio" class="radioButton" value="3" name="contrEntrada" [(ngModel)]="contrEntrada"> Regular
+        <input type="radio" class="radioButton" value="4" name="contrEntrada" [(ngModel)]="contrEntrada"> Bom
+        <input type="radio" class="radioButton" value="5" name="contrEntrada" [(ngModel)]="contrEntrada"> Excelente
+      </div>
     </div>
-  </div>  <div class="row" id="AvaliaRadio" *ngIf="this.isButtonVisible" > 
-    <span style="margin-left: 1%; font-weight:bold">Ambiente com Circulção de Ar:</span>
-    <div style="margin-left: 1%;" class="row">
-     <input  type="radio" class="radioButton" value="1" name="ambClient" [(ngModel)]="ambClient"> Pessimo
-     <input  type="radio" class="radioButton" value="2" name="ambClient" [(ngModel)]="ambClient"> Ruim
-     <input  type="radio" class="radioButton" value="3" name="ambClient" [(ngModel)]="ambClient"> Regular
-     <input  type="radio" class="radioButton" value="4" name="ambClient" [(ngModel)]="ambClient"> Bom
-     <input  type="radio" class="radioButton" value="5" name="ambClient" [(ngModel)]="ambClient"> Excelente
+  </div>
+  <div class="row">
+    <div class="col" id="AvaliaRadio" *ngIf="this.isButtonVisible">
+      <span style="margin-left: 1%; font-weight:bold">Limite Cliente:</span>
+      <div style="margin-left: 1%;" class="col">
+        <input type="radio" class="radioButton" value="1" name="limClient" [(ngModel)]="limClient"> Pessimo
+        <input type="radio" class="radioButton" value="2" name="limClient" [(ngModel)]="limClient"> Ruim
+        <input type="radio" class="radioButton" value="3" name="limClient" [(ngModel)]="limClient"> Regular
+        <input type="radio" class="radioButton" value="4" name="limClient" [(ngModel)]="limClient"> Bom
+        <input type="radio" class="radioButton" value="5" name="limClient" [(ngModel)]="limClient"> Excelente
+      </div>
     </div>
-  </div>  <div class="row" id="AvaliaRadio" *ngIf="this.isButtonVisible" > 
-    <span style="margin-left: 1%; font-weight:bold">Higienização do Ambiente:</span>
-    <div style="margin-left: 1%;" class="row">
-     <input  type="radio" value="1" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Pessimo
-     <input  type="radio" value="2" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Ruim
-     <input  type="radio" value="3" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Regular
-     <input  type="radio" value="4" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Bom
-     <input  type="radio" value="5" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Excelente
+  </div>
+  <div class="row">
+    <div class="col" id="AvaliaRadio" *ngIf="this.isButtonVisible">
+      <span style="margin-left: 1%; font-weight:bold">Ambiente com Circulção de Ar:</span>
+      <div style="margin-left: 1%;" class="col">
+        <input type="radio" class="radioButton" value="1" name="ambClient" [(ngModel)]="ambClient"> Pessimo
+        <input type="radio" class="radioButton" value="2" name="ambClient" [(ngModel)]="ambClient"> Ruim
+        <input type="radio" class="radioButton" value="3" name="ambClient" [(ngModel)]="ambClient"> Regular
+        <input type="radio" class="radioButton" value="4" name="ambClient" [(ngModel)]="ambClient"> Bom
+        <input type="radio" class="radioButton" value="5" name="ambClient" [(ngModel)]="ambClient"> Excelente
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" id="AvaliaRadio" *ngIf="this.isButtonVisible">
+      <span style="margin-left: 1%; font-weight:bold">Higienização do Ambiente:</span>
+      <div style="margin-left: 1%;" class="col">
+        <input type="radio" value="1" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Pessimo
+        <input type="radio" value="2" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Ruim
+        <input type="radio" value="3" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Regular
+        <input type="radio" value="4" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Bom
+        <input type="radio" value="5" class="radioButton" name="higAmbiente" [(ngModel)]="higAmbiente"> Excelente
+      </div>
     </div>
   </div>
   <button class="button" (click)="avaliaEmpresa()" *ngIf="this.isButtonVisible">Salvar Avaliação</button>
-  </ion-content>
+</ion-content>

@@ -101,8 +101,7 @@ export class DetalhesPrincipalPage implements OnInit {
         this.limiteClientelbl = 90;
         this.ambienteCirculacaolbl = 90;
         this.higienizacaoAmbientelbl = 90;
-        var result_style = document.getElementById('trGrid').style;
-        result_style.display = 'flex'; 
+       
       });
 
     document.getElementById('inputTeste1').setAttribute("disabled","disabled");
