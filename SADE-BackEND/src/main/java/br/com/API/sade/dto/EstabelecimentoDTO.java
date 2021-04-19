@@ -34,9 +34,6 @@ public class EstabelecimentoDTO {
 
     private String descricao;
 
-    //getNome da Empresa ou CNPJ ou Endereço
-    //RETORNA ID, NOME DA EMPRESA, ENDEREÇO, AVALIACAO GERAL
-
     public EstabelecimentoDTO(Long id, String nome, String endereco, Integer avaliacao_geral ) {
         this.id = id;
         this.nome = nome;

@@ -3,20 +3,28 @@ package br.com.API.sade.dto;
 
 public class UsuarioDTO {
 
-
-
-
     private String email;
 
     private String nome;
 
     private int telefone;
 
+    private String login;
+
+    private String senha;
+
+
     public UsuarioDTO(String nome, String email, int telefone)
     {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
+    }
+
+    public UsuarioDTO(String login, String senha)
+    {
+        this.login = login;
+        this.senha = senha;
     }
 
     public String getEmail() {

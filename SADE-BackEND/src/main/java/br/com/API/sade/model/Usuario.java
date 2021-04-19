@@ -15,6 +15,7 @@ public class Usuario {
     @Pattern("")
     @Column
     private String login;
+
     @Column
     private String senha;
 

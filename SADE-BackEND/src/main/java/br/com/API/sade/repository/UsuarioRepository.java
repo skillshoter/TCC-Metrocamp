@@ -23,9 +23,24 @@ public class UsuarioRepository implements IUsuarioRepository {
                 " (u.nome, u.email, u.telefone)" +
                 " FROM Usuario AS u WHERE u.id = 2";
 
+
         final var query = em.createQuery(jpql);
 
         return query.getResultList();
+    }
+
+    @Override
+    public boolean logar(String login, String senha) {
+        final String jpql = "SELECT COUNT(u)>0 FROM Usuario u WHERE u.login =:login AND u.senha = :senha";
+        final var query = em.createQuery(jpql);
+        query.setParameter("senha", senha);
+        query.setParameter("login", login);
+        final var resultado = (Boolean) query.getSingleResult();
+        if(resultado)
+        {
+            return true;
+        }
+        return false;
     }
 
     @Override

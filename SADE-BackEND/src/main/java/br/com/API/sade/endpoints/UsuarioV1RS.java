@@ -1,36 +1,45 @@
 package br.com.API.sade.endpoints;
 
-import br.com.API.sade.dto.UsuarioDTO;
 import br.com.API.sade.model.Usuario;
 import br.com.API.sade.services.IUsuarioRepository;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @CrossOrigin
 @RestController
+@EnableWebMvc
+@EnableSpringDataWebSupport
 @RequestMapping("/users")
 public class UsuarioV1RS {
 
-    private IUsuarioRepository clienteRepository;
+    private IUsuarioRepository usuarioRepository;
 
     private UsuarioV1RS(IUsuarioRepository clienteRepository)
     {
-        this.clienteRepository = clienteRepository;
+        this.usuarioRepository = clienteRepository;
     }
-    //@CrossOrigin
+
     @RequestMapping(value = "criarUsuario", consumes = {"application/json"}, method = POST)
     public ResponseEntity<Usuario> criaUsuario(@RequestBody final Usuario body){
 
-        clienteRepository.criarUsuario(body);
+        usuarioRepository.criarUsuario(body);
 
 
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @RequestMapping(value = "login", consumes = {"application/json"}, method = GET)
+    public ResponseEntity<Boolean> criaUsuario(@RequestParam String login, String senha){
+
+        final var retorno = usuarioRepository.logar(login,senha)?true:false ;
+
+
+        return new ResponseEntity<>(retorno, HttpStatus.OK);
     }
 
     @RequestMapping(value = "criarUsuarioPj", consumes = {"application/json"}, method = POST)
@@ -48,7 +57,7 @@ public class UsuarioV1RS {
     @RequestMapping(value = "consultarUsuario", method = GET)
     public ResponseEntity<Usuario> consultarUsuario(@RequestParam(value = "id", required = true) final Long id){
 
-        var retorno = clienteRepository.buscarUsuarioPorIdV2(id);
+        var retorno = usuarioRepository.buscarUsuarioPorIdV2(id);
         return new ResponseEntity<>(retorno, HttpStatus.OK);
     }
 

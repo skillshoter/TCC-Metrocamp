@@ -11,5 +11,6 @@ public interface IUsuarioRepository {
 
     List<UsuarioDTO> buscarUsuarioporId(Long Id);
     Usuario buscarUsuarioPorIdV2(Long id);
+    boolean logar(String login, String senha);
     void criarUsuario(Usuario usuario);
 }
