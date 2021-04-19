@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { DetalhesPrincipalPageRoutingModule } from './detalhes-principal-routing.module';
 import { DetalhesPrincipalPage } from './detalhes-principal.page';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DetalhesPrincipalPageRoutingModule
+    DetalhesPrincipalPageRoutingModule,
+    NgbModule
   ],
   declarations: [DetalhesPrincipalPage]
 })

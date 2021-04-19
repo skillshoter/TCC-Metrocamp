@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AngularDelegate } from '@ionic/angular';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-principal',
@@ -21,7 +22,7 @@ export class PrincipalPage implements OnInit {
   CnpjEmpresa:any;
   Endereco:any;
   EmpresasList:any;
-
+  isCollapsed = true;
 
   pesquisar(event:any)
   {

@@ -37,7 +37,7 @@ export class DetalhesPrincipalPage implements OnInit {
   itemGrid:any;
   idEmpresa:any;
 
-  isCollapsed = false;
+  isCollapsed = true;
 
   ngOnInit() {
     interface obj {
