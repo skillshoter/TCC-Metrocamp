@@ -85,6 +85,5 @@ export class PrincipalPage implements OnInit {
      console.log(item);//valor da linha selecionada na grid
      this.route.navigate(['/detalhes-principal',{billing:JSON.stringify(item)}]);
      console.log('pega os detalhes das empresas');
-     alert('API trazendo detalhes da empresa + redirect tela nova');
    }
 }
