@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularDelegate } from '@ionic/angular';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info-vacina',
@@ -7,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoVacinaPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
+
+  isCollapsed = true;
 
   ngOnInit() {
   }
