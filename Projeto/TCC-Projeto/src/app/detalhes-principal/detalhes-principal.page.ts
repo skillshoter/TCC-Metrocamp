@@ -163,7 +163,6 @@ export class DetalhesPrincipalPage implements OnInit {
     {
       //enviar os radio para banco pela API
       console.log(this.idEmpresa + ' :ID empresa');
-      alert("envia dados API para insert de novas informaçoes")
 
       const obj = { 
         idEstabelecimento:Number(this.idEmpresa),

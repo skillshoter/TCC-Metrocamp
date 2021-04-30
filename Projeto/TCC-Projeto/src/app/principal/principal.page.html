@@ -12,36 +12,38 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" style="color: lightgreen;" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" style="color: lightgreen;" href="/principal">Principal</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: lightgreen;" href="/infoCovid">Sobre Covid</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: lightgreen;" href="/infoVacina">Sobre Vacina</a>
+      </li>
+      <li class="nav-item active" >
+        <a class="nav-link" style="color: lightgreen;" href="#">Sair<span class="sr-only">(current)</span></a>
+      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
 
 <ion-content>
  
-    <div class="row">
-      <ion-item>
+    <div class="row" style="width: 100%;">
+      <ion-item style="width: 100%;">
         <ion-label>Nome da Empresa:</ion-label>
-        <ion-input id="NameEmpresa" [(ngModel)]="NameEmpresa"></ion-input>
+        <ion-input style="width: 100%;" id="NameEmpresa" [(ngModel)]="NameEmpresa"></ion-input>
       </ion-item>
     </div> 
     <div class="row"> 
-      <ion-item>
+      <ion-item style="width: 100%;">
          <ion-label>Cnpj da Empresa:</ion-label>
          <ion-input id="CnpjEmpresa" [(ngModel)]="CnpjEmpresa"></ion-input>
       </ion-item>
     </div>
     <div class="row">
-      <ion-item>
+      <ion-item style="width: 100%;">
          <ion-label>Endereço:</ion-label>
          <ion-input id="Endereco" [(ngModel)]="Endereco"></ion-input>
       </ion-item>
@@ -52,7 +54,7 @@
     <div class="grid">
       <div class="descricao">
       <tr id="trGrid"  style="display: none; width: 100%;">
-        <th style="margin-left: 2%; width: 20%;" colspan="3" >ID</th>
+        <th style="margin-left: 1%; width: 5%;" colspan="3" >ID</th>
         <th style="margin-left: 2%; width: 20%;" colspan="3" >Nome Empresa</th>
         <th style="margin-left: 2%; width: 20%;" colspan="2" >Endereço</th>
         <th style="margin-left: 2%; width: 20%;" colspan="2" >Avaliação Geral</th>
@@ -61,10 +63,10 @@
     </div>
       <ion-list padding *ngFor="let item of items">
         <ion-item (click)="viewItem(item)">
-          <p style="margin-left: 5.5%; width: 20%;">{{item.id}}</p>
-          <p style="margin-left: 2.5%; width: 20%;">{{item.nome}}</p>
-          <p style="margin-left: 2.5%; width: 20%;">{{item.endereco}}</p>
-          <p style="margin-left: 2.5%; width: 20%;">{{item.avaliacao_geral}}</p>
+          <p style="margin-left: 1%; width: 1%; font-size: 12px;">{{item.id}}</p>
+          <p style="margin-left: 2.5%; width: 20%; font-size: 12px;">{{item.nome}}</p>
+          <p style="margin-left: 4.5%; width: 20%; font-size: 12px;">{{item.endereco}}</p>
+          <p style="margin-left: 5%; width: 20%; font-size: 12px;">{{item.avaliacao_geral}}</p>
             <button class="buttonGrid" (click)="detalhesRowGrid(item)" >Ver</button>
         </ion-item>
     </ion-list>

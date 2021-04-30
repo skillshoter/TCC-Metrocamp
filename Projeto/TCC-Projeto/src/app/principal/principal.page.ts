@@ -34,6 +34,8 @@ export class PrincipalPage implements OnInit {
         }else
         {
           this.ionViewDidLoadDefinitivo(data);
+          var result_style = document.getElementById('trGrid').style;
+          result_style.display = 'flex'; 
         }
       },(error)=> {
         console.log(error);
@@ -66,7 +68,6 @@ export class PrincipalPage implements OnInit {
     })
 
     this.items = itemss;
-    console.log('funcionou bora estourar um champagne' + this.items);
    }
 
   ionViewDidLoad() {
