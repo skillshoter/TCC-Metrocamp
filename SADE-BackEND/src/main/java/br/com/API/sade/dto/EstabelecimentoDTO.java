@@ -1,5 +1,6 @@
 package br.com.API.sade.dto;
 
+import br.com.API.sade.model.Avaliacao;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -13,6 +14,8 @@ public class EstabelecimentoDTO {
     private String nome;
 
     private String endereco;
+
+    private Avaliacao avaliacao;
 
     private Integer alcool_disponivel;
 
@@ -39,6 +42,21 @@ public class EstabelecimentoDTO {
         this.nome = nome;
         this.endereco = endereco;
         this.avaliacao_geral = avaliacao_geral;
+    }
+
+    public EstabelecimentoDTO(Long id, String nome, String endereco, Long avaliacao_geral ) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.avaliacao_geral = avaliacao_geral.intValue();
+
+    }
+
+    public EstabelecimentoDTO(Long id, String nome, String endereco, Avaliacao avaliacao ) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.avaliacao = avaliacao;
 
     }
     public EstabelecimentoDTO(Long id, String nome, String endereco, Integer alcool_disponivel,
@@ -58,6 +76,24 @@ public class EstabelecimentoDTO {
         this.limite_pessoas = limite_pessoas;
         this.avaliacao_geral = avaliacao_geral;
         this.descricao = descricao;
+    }
+
+    public EstabelecimentoDTO(Long id, String nome, String endereco,Long aglomeracao,
+                              Long alcool_disponivel, Long funcionarios_mascara, Long clientes_mascara,
+                              Long higienizacao, Long circulacao_ar, Long controle_entrada,
+                              Long limite_pessoas, Long avaliacao_geral) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.alcool_disponivel = alcool_disponivel.intValue();
+        this.aglomeracao = aglomeracao.intValue();
+        this.funcionarios_mascara = funcionarios_mascara.intValue();
+        this.clientes_mascara = clientes_mascara.intValue();
+        this.circulacao_ar = circulacao_ar.intValue();
+        this.higienizacao = higienizacao.intValue();
+        this.controle_entrada = controle_entrada.intValue();
+        this.limite_pessoas = limite_pessoas.intValue();
+        this.avaliacao_geral = avaliacao_geral.intValue();
     }
 
     public Long getId() {

@@ -21,19 +21,20 @@ public class EstabelecimentoRepository implements IEstabelecimentoRepository {
 
     @Override
     public List<EstabelecimentoDTO> buscarEstabelecimentoPorNome(String nome) {
+        final String jpqlCount = "SELECT COUNT (a) FROM Avaliacao a where a.estabelecimento.nome = :nome";
+        final var queryCount = em.createQuery(jpqlCount);
+        queryCount.setParameter("nome", nome);
+        final Long numeroAvaliacoes = (Long) queryCount.getSingleResult();
+
         final String jpql = "SELECT NEW " + EstabelecimentoDTO.class.getName() +
-                " (e.id, e.nome, e.endereco, e.alcool_disponivel," +
-                "select sum a.aglomeracao/count e.aglomeracao, e.funcionarios_mascara, e.clientes_mascara," +
-                " e.circulacao_ar, e.higienizacao, e.controle_entrada, e.limite_pessoas," +
-                " e.avaliacao_geral, e.descricao)" +
-                " FROM Estabelecimento as e WHERE e.nome = :nome";
-
-
-
+                " (e.id, e.nome, e.endereco, SUM(a.alcool_disponivel/:numeroAvaliacoes), SUM(a.aglomeracao/:numeroAvaliacoes), SUM(a.funcionarios_mascara/:numeroAvaliacoes),  SUM(a.clientes_mascara/:numeroAvaliacoes), " +
+                " SUM(a.higienizacao/:numeroAvaliacoes),  SUM(a.circulacao_ar/:numeroAvaliacoes),  SUM(a.controle_entrada/:numeroAvaliacoes)," +
+                " SUM(a.limite_pessoas/:numeroAvaliacoes), SUM(e.avaliacao_geral/:numeroAvaliacoes))" +
+                " FROM Estabelecimento e INNER JOIN Avaliacao a ON e.id = a.estabelecimento.id WHERE e.nome =:nome GROUP BY a.estabelecimento.id";
+        
         final var query = em.createQuery(jpql);
         query.setParameter("nome", nome);
-
-
+        query.setParameter("numeroAvaliacoes", numeroAvaliacoes.intValue());
         return query.getResultList();
     }
 
