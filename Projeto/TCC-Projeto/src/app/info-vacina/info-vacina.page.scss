@@ -1,9 +1,12 @@
-.teste{
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-}
 
 ion-content {
-    --background: #d0e4a8 url('../../assets/covidPNG.png') no-repeat center center / cover !important;
+    --background: #d0e4a8;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    opacity: 70%;
 }
