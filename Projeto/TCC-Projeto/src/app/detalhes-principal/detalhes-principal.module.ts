@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { PrincipalPageRoutingModule } from './principal-routing.module';
-import { PrincipalPage } from './principal.page';
+import { DetalhesPrincipalPageRoutingModule } from './detalhes-principal-routing.module';
+import { DetalhesPrincipalPage } from './detalhes-principal.page';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PrincipalPageRoutingModule,
-    NgbModule 
+    DetalhesPrincipalPageRoutingModule,
+    NgbModule
   ],
-  declarations: [PrincipalPage]
+  declarations: [DetalhesPrincipalPage]
 })
-export class PrincipalPageModule {}
+export class DetalhesPrincipalPageModule {}

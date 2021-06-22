@@ -1,0 +1,42 @@
+<ion-header>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</ion-header>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse"
+    data-target="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
+    (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarTogglerDemo02">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" style="color: lightgreen;" href="/principal">Principal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: lightgreen;" href="/info-covid">Sobre Covid</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: lightgreen;" href="/info-vacina">Sobre Vacina</a>
+      </li>
+      <li class="nav-item active" >
+        <a class="nav-link" style="color: lightgreen;" href="#">Sair<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<ion-content>
+  <div style="text-align: center;">
+    <span>
+      Em meados de dezembro de 2019 surgiu um novo tipo de doença que ainda paira sobre a humanidade nos tempos atuais, sendo ele o Coronavírus, também conhecido como COVID-19. Essa doença, tem como principais características infecções respiratórias, febre, tosse, dificuldade para respirar, dores musculares, dor de cabeça, dor de garganta, nariz escorrendo e diarreia. 
+      Na maioria dos casos, a doença não possui um alto nível de gravidade, entretanto em casos em que ela se caracteriza como grave, o infectado pode apresentar o desenvolvimento da pneumonia causando insuficiência respiratória
+    </span>
+  </div>
+  <div class="teste">
+    <img src="../../assets/covidPNG.png" class="center">
+</div>
+</ion-content>

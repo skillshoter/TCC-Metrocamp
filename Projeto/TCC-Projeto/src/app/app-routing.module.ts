@@ -23,6 +23,18 @@ const routes: Routes = [
     path: 'detalhes-empresa',
     loadChildren: () => import('./detalhes-empresa/detalhes-empresa.module').then( m => m.DetalhesEmpresaPageModule)
   },
+  {
+    path: 'detalhes-principal',
+    loadChildren: () => import('./detalhes-principal/detalhes-principal.module').then( m => m.DetalhesPrincipalPageModule)
+  },  {
+    path: 'info-covid',
+    loadChildren: () => import('./info-covid/info-covid.module').then( m => m.InfoCovidPageModule)
+  },
+  {
+    path: 'info-vacina',
+    loadChildren: () => import('./info-vacina/info-vacina.module').then( m => m.InfoVacinaPageModule)
+  },
+
 ];
 
 @NgModule({

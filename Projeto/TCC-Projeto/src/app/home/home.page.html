@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-BRUNÃO BROSHAICARECADSDSD
+    <ion-title class="titulo">
+SADE
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,16 +14,29 @@ BRUNÃO BROSHAICARECADSDSD
   </ion-header>
 
   <div id="container">
-    <ion-item>
-      <ion-label>Login</ion-label>
-      <ion-input id="login" [(ngModel)]="login"></ion-input>
-    </ion-item>
-    <ion-input type="password" [(ngModel)]="senha"></ion-input>
-    <ion-item>
-      <ion-button (click)="getData()">Enter</ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button (click)="goCad()">Cadastrar Usuario</ion-button>
-    </ion-item>
+    <div class="row">
+      <ion-item>
+        <ion-label>Login</ion-label>
+        <ion-input id="login" [(ngModel)]="login"></ion-input>
+      </ion-item>
+    </div>
+    <div class="row">
+      <ion-item>
+        <ion-label>Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="senha"></ion-input>
+      </ion-item>
+    </div>
+   <div class="row">
+     <div class="col">
+       <ion-item>
+         <ion-button class="buttonVoltar" (click)="getData()">Acessar Conta</ion-button>
+       </ion-item>
+      </div>
+     <div class="col">
+       <ion-item>
+         <ion-button class="buttonVoltar" (click)="goCad()">Cadastrar Usuario</ion-button>
+       </ion-item>
+      </div>
+   </div>
   </div>
 </ion-content>
