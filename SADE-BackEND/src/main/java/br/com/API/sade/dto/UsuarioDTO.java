@@ -13,6 +13,8 @@ public class UsuarioDTO {
 
     private String senha;
 
+    String[] listaNova = new String[]{};
+
 
     public UsuarioDTO(String nome, String email, int telefone)
     {
@@ -27,7 +29,7 @@ public class UsuarioDTO {
         this.senha = senha;
     }
 
-    public String getEmail() {
+    public String getEmail() throws IllegalAccessError{
         return email;
     }
 

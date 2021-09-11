@@ -26,7 +26,7 @@ public class UsuarioV1RS {
     }
 
     @RequestMapping(value = "criarUsuario", consumes = {"application/json"}, method = POST)
-    public ResponseEntity<Usuario> criaUsuario(@RequestBody final Usuario body){
+    public ResponseEntity<Usuario> criarUsuario(@RequestBody final Usuario body){
 
         usuarioRepository.criarUsuario(body);
 
@@ -34,7 +34,7 @@ public class UsuarioV1RS {
         return new ResponseEntity<>(HttpStatus.OK);
     }
     @RequestMapping(value = "login", consumes = {"application/json"}, method = GET)
-    public ResponseEntity<Boolean> criaUsuario(@RequestParam String login, String senha){
+    public ResponseEntity<Boolean> logar(@RequestParam String login, String senha){
 
         final var retorno = usuarioRepository.logar(login,senha)?true:false ;
 

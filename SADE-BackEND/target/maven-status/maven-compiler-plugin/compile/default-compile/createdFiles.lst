@@ -13,3 +13,4 @@ br\com\API\sade\repository\UsuarioRepository.class
 br\com\API\sade\services\IAvaliacaoRepository.class
 br\com\API\sade\services\IEstabelecimentoRepository.class
 br\com\API\sade\model\Avaliacao.class
+br\com\API\sade\endpoints\SensorV1RS.class
